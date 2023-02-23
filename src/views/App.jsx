@@ -6,8 +6,11 @@ import { IoIosArrowDown } from 'react-icons/io'
 const AppContainer = styled('div')({})
 const Navbar = styled('nav')({
   display: 'flex',
+  position: 'sticky',
+  top: '0',
   boxSizing: 'border-box',
   width: '100%',
+  height: '60px',
   backgroundColor: 'white',
   justifyContent: 'space-between',
   alignItems: 'center',
@@ -46,6 +49,7 @@ const Title = styled.h2(
     lineHeight: props.lineHeight,
     textTransform: props.textTransform,
     textShadow: props.textShadow,
+    margin: props.margin,
   })
 )
 const Section = styled.section(
@@ -57,6 +61,29 @@ const Section = styled.section(
     padding: props.padding,
     display: props.display,
     justifyContent: props.justifyContent,
+  })
+)
+const BottonNavbar = styled.div({
+  position: 'fixed',
+  display: 'flex',
+  justifyContent: 'space-around',
+  bottom: '0',
+  width: '100%',
+  height: '80px',
+  backgroundColor: '#464446',
+})
+const IconContainer = styled.div({
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignItems: 'center',
+})
+const Img = styled.img(
+  { width: '38px', height: '38px' },
+  (props) => ({
+    width: props.width,
+    height: props.height,
+    padding: props.padding,
   })
 )
 
@@ -129,6 +156,45 @@ function App() {
           </Title>
         </Section>
       </AppContainer>
+      <BottonNavbar>
+        <IconContainer>
+          <Img src='src/assets/work_icon.png' alt='Work icon' />
+          <Title
+            fontSize='16px'
+            color='#FFFFFF'
+            lineHeight='88%'
+            fontWeight={600}
+          >
+            My work
+          </Title>
+        </IconContainer>
+        <IconContainer>
+          <Img
+            padding='0 0 5px 0'
+            src='src/assets/skills_icon.png'
+            alt='Work icon'
+          />
+          <Title
+            fontSize='16px'
+            color='#FFFFFF'
+            lineHeight='88%'
+            fontWeight={600}
+          >
+            Skills
+          </Title>
+        </IconContainer>
+        <IconContainer>
+          <Img src='src/assets/contact_icon.png' alt='Work icon' />
+          <Title
+            fontSize='16px'
+            color='#FFFFFF'
+            lineHeight='88%'
+            fontWeight={600}
+          >
+            Contact
+          </Title>
+        </IconContainer>
+      </BottonNavbar>
     </>
   )
 }
