@@ -3,7 +3,9 @@ import { CgMenu } from 'react-icons/cg'
 import { IconContext } from 'react-icons'
 import { IoIosArrowDown } from 'react-icons/io'
 
-const AppContainer = styled('div')({})
+const AppContainer = styled('div')({
+  marginBottom: '80px',
+})
 const Navbar = styled('nav')({
   display: 'flex',
   position: 'sticky',
@@ -90,111 +92,104 @@ const Img = styled.img(
 function App() {
   return (
     <>
-      <Navbar>
-        <IconContext.Provider value={{ size: '2rem' }}>
-          <Logo
-            src='src/assets/jakekap_logo.png'
-            alt='Jakekap Logo'
-          />
-          <CgMenu />
-        </IconContext.Provider>
-      </Navbar>
-      <AppContainer>
-        <PageContainer>
-          <TitleWrapper>
-            <Title
-              lineHeight='100%'
-              color='#FFFFFF'
-              fontWeight={600}
-              fontSize='32px'
-              textShadow='0px 0px 4px #000'
-            >
-              Christian Andrade
-            </Title>
-            <Title
-              fontSize='48px'
-              color='#FFB95F'
-              lineHeight='100%'
-              fontWeight={600}
-              textShadow='0px 0px 4px #000'
-              textTransform='uppercase'
-            >
-              Web Developer
-            </Title>
-            <Title
-              fontSize='24px'
-              color='#FFFFFF'
-              lineHeight='107%'
-              fontWeight={600}
-              textShadow='0px 0px 4px #000'
-              textTransform='uppercase'
-            >
-              Turning ideas into digital
-              <br /> reality
-            </Title>
-          </TitleWrapper>
-        </PageContainer>
-        <Section
-          display='flex'
-          justifyContent='center'
-          padding='100px 30px'
-        >
+      <div>
+        <Navbar>
           <IconContext.Provider value={{ size: '2rem' }}>
-            <IoIosArrowDown />
+            <Logo
+              src='src/assets/jakekap_logo.png'
+              alt='Jakekap Logo'
+            />
+            <CgMenu />
           </IconContext.Provider>
-        </Section>
-        <Section>
-          <Title
-            fontSize='40px'
-            color='#464446'
-            lineHeight='88%'
-            fontWeight={700}
-            textTransform='uppercase'
-          >
-            My <br />
-            Projects
-          </Title>
-        </Section>
-      </AppContainer>
-      <BottonNavbar>
-        <IconContainer>
-          <Img src='src/assets/work_icon.png' alt='Work icon' />
-          <Title
-            fontSize='16px'
-            color='#FFFFFF'
-            lineHeight='88%'
-            fontWeight={600}
-          >
-            My work
-          </Title>
-        </IconContainer>
-        <IconContainer>
-          <Img
-            padding='0 0 5px 0'
-            src='src/assets/skills_icon.png'
-            alt='Work icon'
-          />
-          <Title
-            fontSize='16px'
-            color='#FFFFFF'
-            lineHeight='88%'
-            fontWeight={600}
-          >
-            Skills
-          </Title>
-        </IconContainer>
-        <IconContainer>
-          <Img src='src/assets/contact_icon.png' alt='Work icon' />
-          <Title
-            fontSize='16px'
-            color='#FFFFFF'
-            lineHeight='88%'
-            fontWeight={600}
-          >
-            Contact
-          </Title>
-        </IconContainer>
-      </BottonNavbar>
+        </Navbar>
+        <AppContainer>
+          <PageContainer>
+            <TitleWrapper>
+              <Title
+                lineHeight='100%'
+                color='#FFFFFF'
+                fontWeight={600}
+                fontSize='32px'
+                textShadow='0px 0px 4px #000'
+              >
+                Christian Andrade
+              </Title>
+              <Title
+                fontSize='48px'
+                color='#FFB95F'
+                lineHeight='100%'
+                fontWeight={600}
+                textShadow='0px 0px 4px #000'
+                textTransform='uppercase'
+              >
+                Web Developer
+              </Title>
+              <Title
+                fontSize='24px'
+                color='#FFFFFF'
+                lineHeight='107%'
+                fontWeight={600}
+                textShadow='0px 0px 4px #000'
+                textTransform='uppercase'
+              >
+                Turning ideas into digital
+                <br /> reality
+              </Title>
+            </TitleWrapper>
+          </PageContainer>
+          <Section>
+            <Title
+              fontSize='40px'
+              color='#464446'
+              lineHeight='88%'
+              fontWeight={700}
+              textTransform='uppercase'
+            >
+              My <br />
+              Projects
+            </Title>
+          </Section>
+        </AppContainer>
+        <BottonNavbar>
+          <IconContainer>
+            <Img src='src/assets/work_icon.png' alt='Work icon' />
+            <Title
+              fontSize='16px'
+              color='#FFFFFF'
+              lineHeight='88%'
+              fontWeight={600}
+            >
+              My work
+            </Title>
+          </IconContainer>
+          <IconContainer>
+            <Img
+              padding='0 0 5px 0'
+              src='src/assets/skills_icon.png'
+              alt='Work icon'
+            />
+            <Title
+              fontSize='16px'
+              color='#FFFFFF'
+              lineHeight='88%'
+              fontWeight={600}
+            >
+              Skills
+            </Title>
+          </IconContainer>
+          <IconContainer>
+            <Img src='src/assets/contact_icon.png' alt='Work icon' />
+            <Title
+              fontSize='16px'
+              color='#FFFFFF'
+              lineHeight='88%'
+              fontWeight={600}
+            >
+              Contact
+            </Title>
+          </IconContainer>
+        </BottonNavbar>
+      </div>
     </>
   )
 }
