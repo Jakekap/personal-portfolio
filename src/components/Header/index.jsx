@@ -1,6 +1,8 @@
 import styled from '@emotion/styled'
 import { IconContext } from 'react-icons'
+import { css } from '@emotion/react'
 import Typography from '../Typography'
+import { Link } from 'wouter'
 
 const Navbar = styled('nav')({
   display: 'flex',
@@ -9,15 +11,14 @@ const Navbar = styled('nav')({
   gap: '2rem',
 })
 
-const NavItem = styled('li')({
-  listStyleType: 'none',
-  fontFamily: 'Akshar',
-  fontSize: '20px',
-  cursor: 'pointer',
-  ':hover': {
-    textDecoration: 'underline',
-  },
-})
+const LinkStyle = css`
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: #464646;
+  :hover {
+    text-decoration: underline;
+  }
+`
 const TitleContainer = styled('div')({
   display: 'flex',
   justifyContent: 'space-between',
@@ -58,10 +59,18 @@ function Header() {
             </Typography>
           </TitleContainer>
           <Navbar>
-            <NavItem>My projects</NavItem>
-            <NavItem>Experience</NavItem>
-            <NavItem>About me</NavItem>
-            <NavItem>Contact</NavItem>
+            <Link css={LinkStyle} href='/projects'>
+              My projects
+            </Link>
+            <Link css={LinkStyle} href='/'>
+              Experience
+            </Link>
+            <Link css={LinkStyle} href='#'>
+              About me
+            </Link>
+            <Link css={LinkStyle} href='#'>
+              Contact
+            </Link>
           </Navbar>
           {/* <CgMenu /> */}
         </NavContainer>
