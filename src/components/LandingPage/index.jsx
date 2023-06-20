@@ -3,13 +3,11 @@ import Typography from '../Typography'
 
 function LandingPage() {
   return (
-    <div
+    <section
       style={{
         display: 'flex',
-        justifyContent: 'space-between',
-        margin: '0 100px',
-        height: '100vh',
         minHeight: '900px',
+        margin: '0 100px',
       }}
     >
       <div
@@ -141,7 +139,7 @@ function LandingPage() {
           </Typography>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

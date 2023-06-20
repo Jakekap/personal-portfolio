@@ -8,7 +8,9 @@ import AboutMe from '../components/AboutMe'
 import ContactMe from '../components/ContactMe'
 import Footer from '../components/Footer'
 
-const AppContainer = styled('div')({ margin: '0 100px' })
+const AppContainer = styled.main({
+  margin: '0 100px',
+})
 
 function App() {
   return (
@@ -21,8 +23,8 @@ function App() {
         <MySkills />
         <AboutMe />
         <ContactMe />
-        <Footer />
       </AppContainer>
+      <Footer />
     </>
   )
 }

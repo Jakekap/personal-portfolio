@@ -8,6 +8,8 @@ import {
 import '@splidejs/react-splide/css'
 import './splideSyles.css'
 import { MdArrowForwardIos } from 'react-icons/md'
+import Shape from '../Shape'
+import SvgItem from '../SvgItem'
 
 const Img = styled('img')({
   marginBottom: '20px',
@@ -23,23 +25,35 @@ const CustomSplideSlide = {
 
 function MyProjects() {
   return (
-    <div style={{ marginBottom: '150px' }}>
-      <div style={{ marginBottom: '50px' }}>
+    <section style={{ marginBottom: '10rem' }}>
+      <div style={{ marginBottom: '3rem', position: 'relative' }}>
+        <Shape right>
+          <SvgItem
+            src='src/assets/svg/shapes/shape1.svg'
+            alt='shape1'
+          />
+        </Shape>
+        <Shape left bottom='0'>
+          <SvgItem
+            src='src/assets/svg/shapes/shape2.svg'
+            alt='shape2'
+          />
+        </Shape>
         <div
           style={{
             position: 'relative',
             zIndex: '1',
-            top: '20px',
+            top: '1.6rem',
           }}
         >
           <Typography
             bold
-            fontSize='64px'
+            fontSize='4rem'
             color='#464446'
             lineHeight='88%'
             fontWeight={700}
             textTransform='uppercase'
-            marginLeft='100px'
+            marginLeft='6rem'
           >
             My <br />
             Projects
@@ -54,7 +68,7 @@ function MyProjects() {
             rewind: true,
             arrows: true,
             pagination: false,
-            gap: '2em',
+            gap: '2rem',
           }}
         >
           <SplideTrack>
@@ -62,8 +76,8 @@ function MyProjects() {
               <Img src='src/assets/images/gato1.png' alt='gato1' />
               <Typography
                 bold
-                fontSize='32px'
-                color='#464446'
+                fontSize='2rem'
+                color='#111111'
                 lineHeight='88%'
                 fontWeight={500}
                 textTransform='uppercase'
@@ -75,8 +89,8 @@ function MyProjects() {
               <Img src='src/assets/images/gato2.png' alt='gato2' />
               <Typography
                 bold
-                fontSize='32px'
-                color='#464446'
+                fontSize='2rem'
+                color='#111111'
                 lineHeight='88%'
                 fontWeight={500}
                 textTransform='uppercase'
@@ -88,8 +102,8 @@ function MyProjects() {
               <Img src='src/assets/images/gato3.jpg' alt='gato3' />
               <Typography
                 bold
-                fontSize='32px'
-                color='#464446'
+                fontSize='2rem'
+                color='#111111'
                 lineHeight='88%'
                 fontWeight={500}
                 textTransform='uppercase'
@@ -101,8 +115,8 @@ function MyProjects() {
               <Img src='src/assets/images/gato4.jpg' alt='gato4' />
               <Typography
                 bold
-                fontSize='32px'
-                color='#464446'
+                fontSize='2rem'
+                color='#111111'
                 lineHeight='88%'
                 fontWeight={500}
                 textTransform='uppercase'
@@ -114,8 +128,8 @@ function MyProjects() {
               <Img src='src/assets/images/gato5.jpg' alt='gato5' />
               <Typography
                 bold
-                fontSize='32px'
-                color='#464446'
+                fontSize='2rem'
+                color='#111111'
                 lineHeight='88%'
                 fontWeight={500}
                 textTransform='uppercase'
@@ -137,7 +151,7 @@ function MyProjects() {
       <div>
         <Typography
           bold
-          fontSize='32px'
+          fontSize='2rem'
           color='#464446'
           lineHeight='88%'
           fontWeight={500}
@@ -149,7 +163,7 @@ function MyProjects() {
           SEE ALL PROJECTS --&gt;
         </Typography>
       </div>
-    </div>
+    </section>
   )
 }
 

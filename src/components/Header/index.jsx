@@ -1,5 +1,4 @@
 import styled from '@emotion/styled'
-// import { CgMenu } from 'react-icons/cg'
 import { IconContext } from 'react-icons'
 import Typography from '../Typography'
 
@@ -7,13 +6,17 @@ const Navbar = styled('nav')({
   display: 'flex',
   minWidth: '400px',
   margin: '0 100px',
+  gap: '2rem',
 })
 
 const NavItem = styled('li')({
-  paddingLeft: '20px',
   listStyleType: 'none',
   fontFamily: 'Akshar',
   fontSize: '20px',
+  cursor: 'pointer',
+  ':hover': {
+    textDecoration: 'underline',
+  },
 })
 const TitleContainer = styled('div')({
   display: 'flex',
@@ -27,7 +30,6 @@ const TitleContainer = styled('div')({
 const NavContainer = styled('div')({
   display: 'flex',
   boxSizing: 'border-box',
-  width: '100%',
   backgroundColor: '#FFF',
   justifyContent: 'space-between',
   alignItems: 'center',
@@ -38,7 +40,7 @@ const Logo = styled('img')({
 })
 function Header() {
   return (
-    <div>
+    <header>
       <IconContext.Provider value={{ size: '2rem' }}>
         <NavContainer>
           <TitleContainer>
@@ -64,7 +66,7 @@ function Header() {
           {/* <CgMenu /> */}
         </NavContainer>
       </IconContext.Provider>
-    </div>
+    </header>
   )
 }
 
