@@ -7,6 +7,8 @@ import MySkills from '../components/MySkills'
 import AboutMe from '../components/AboutMe'
 import ContactMe from '../components/ContactMe'
 import Footer from '../components/Footer'
+import Projects from './Projects'
+import { Route } from 'wouter'
 
 const AppContainer = styled.main({
   margin: '0 100px',
@@ -16,14 +18,17 @@ function App() {
   return (
     <>
       <Header />
-      <AppContainer>
-        <LandingPage />
-        <MyProjects />
-        <WorkExperience />
-        <MySkills />
-        <AboutMe />
-        <ContactMe />
-      </AppContainer>
+      <Route path='/'>
+        <AppContainer>
+          <LandingPage />
+          <MyProjects />
+          <WorkExperience />
+          <MySkills />
+          <AboutMe />
+          <ContactMe />
+        </AppContainer>
+      </Route>
+      <Route path='/projects' component={Projects} />
       <Footer />
     </>
   )
