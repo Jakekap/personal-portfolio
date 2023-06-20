@@ -6,16 +6,17 @@
 }
 * {
   box-sizing: border-box;
-@layer reset, base, tokens, recipes, utilities;
-html {
-  margin: 0;
-  padding: 0;
-  background-color: #ece8e1;
-  font-size: 16px;
-  font-family: 'Akshar', sans-serif;
-  font-family: 'Akshar', sans-serif;
-}
-a {
-  color: var(--txt-color);
-  text-decoration: none;
+  @layer reset, base, tokens, recipes, utilities;
+  html {
+    margin: 0;
+    padding: 0;
+    background-color: #ece8e1;
+    font-size: 16px;
+    font-family: 'Akshar', sans-serif;
+    font-family: 'Akshar', sans-serif;
+  }
+  a {
+    color: var(--txt-color);
+    text-decoration: none;
+  }
 }
