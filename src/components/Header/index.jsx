@@ -48,7 +48,7 @@ function Header() {
         <NavContainer>
           <TitleContainer>
             <Logo
-              src='src/assets/images/jakekap_logo.png'
+              src='/images/jakekap_logo.png'
               alt='Jakekap Logo'
             />
             <Typography

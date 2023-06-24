@@ -90,7 +90,7 @@ function MyProjects() {
         >
           <SplideTrack>
             <SplideSlide style={CustomSplideSlide}>
-              <Img src='src/assets/images/gato1.png' alt='gato1' />
+              <Img src='/images/gato1.png' alt='gato1' />
               <Typography
                 size='2rem'
                 weight={400}
@@ -99,7 +99,7 @@ function MyProjects() {
               </Typography>
             </SplideSlide>
             <SplideSlide style={CustomSplideSlide}>
-              <Img src='src/assets/images/gato2.png' alt='gato2' />
+              <Img src='/images/gato2.png' alt='gato2' />
               <Typography
                 size='2rem'
                 weight={400}
@@ -108,7 +108,7 @@ function MyProjects() {
               </Typography>
             </SplideSlide>
             <SplideSlide style={CustomSplideSlide}>
-              <Img src='src/assets/images/gato3.jpg' alt='gato3' />
+              <Img src='/images/gato3.jpg' alt='gato3' />
               <Typography
                 size='2rem'
                 weight={400}
@@ -117,7 +117,7 @@ function MyProjects() {
               </Typography>
             </SplideSlide>
             <SplideSlide style={CustomSplideSlide}>
-              <Img src='src/assets/images/gato4.jpg' alt='gato4' />
+              <Img src='/images/gato4.jpg' alt='gato4' />
               <Typography
                 size='2rem'
                 weight={400}
@@ -126,7 +126,7 @@ function MyProjects() {
               </Typography>
             </SplideSlide>
             <SplideSlide style={CustomSplideSlide}>
-              <Img src='src/assets/images/gato5.jpg' alt='gato5' />
+              <Img src='/images/gato5.jpg' alt='gato5' />
               <Typography
                 size='2rem'
                 weight={400}

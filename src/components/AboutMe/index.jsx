@@ -67,7 +67,7 @@ function AboutMe() {
             aspectRatio: '1/1',
             objectFit: 'cover',
           }}
-          src='src/assets/images/chris.jpg'
+          src='/images/chris.jpg'
           alt='Christian Andrade'
         />
       </figure>
