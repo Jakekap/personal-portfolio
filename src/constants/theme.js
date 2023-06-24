@@ -39,9 +39,9 @@ export const globalStyles = css`
     box-sizing: border-box;
   }
   html {
-    font-family: 'Akshar, san-serif';
     background-color: ${theme.color.background};
     font-size: 16px;
+    font-family: 'Akshar', san-serif;
   }
   body {
     margin: 0;
