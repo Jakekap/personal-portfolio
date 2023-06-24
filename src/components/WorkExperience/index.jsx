@@ -8,7 +8,17 @@ import SvgItem from '../SvgItem'
 
 const workExperienceStyle = css`
   position: relative;
-  margin-bottom: 250px;
+  margin-bottom: 7rem;
+`
+
+const expContainer = css`
+  display: flex;
+  margin-top: 4rem;
+  @media only screen and (max-width: 992px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 `
 
 function WorkExperience() {
@@ -16,29 +26,21 @@ function WorkExperience() {
     <section css={workExperienceStyle}>
       <Shape left>
         <SvgItem
-          src='src/assets/svg/shapes/shape3.svg'
+          src='/svg/shapes/shape3.svg'
           alt='shape3'
         />
       </Shape>
       <Typography
-        bold
-        fontSize='4rem'
+        header
+        size='4rem'
         color='#464446'
-        lineHeight='88%'
-        fontWeight={700}
-        textTransform='uppercase'
-        marginLeft='6rem'
+        weight={700}
+        margin='0 0 3rem 3rem'
       >
-        Work <br />
-        Experience
+        WORK <br />
+        EXPERIENCE
       </Typography>
-      <div
-        style={{
-          display: 'flex',
-          height: '7rem',
-          marginTop: '4rem',
-        }}
-      >
+      <div css={expContainer}>
         {experienceData.map((experience, index) => {
           return (
             <div
@@ -46,8 +48,9 @@ function WorkExperience() {
               style={{
                 width: '50%',
                 display: 'grid',
-                gridTemplateColumns: 'auto 1fr',
-                gridTemplateRows: 'repeat(2, 1fr)',
+                gridTemplateColumns: '60px 1fr',
+                gridAutoFlow: 'column',
+                marginBottom: '3rem',
               }}
             >
               <IconContext.Provider
@@ -63,13 +66,13 @@ function WorkExperience() {
                 <MdArrowForwardIos />
               </IconContext.Provider>
 
-              <Typography fontSize='36px' fontWeight={600}>
+              <Typography size='2.3rem' weight={700}>
                 {`${experience.profession} AT ${experience.company}`}
               </Typography>
               <Typography
                 color='#979797'
-                fontSize='24px'
-                fontWeight={600}
+                size='2rem'
+                weight={400}
               >
                 {`${experience.startDate} - ${experience.endDate}`}
               </Typography>

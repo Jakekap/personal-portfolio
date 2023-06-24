@@ -1,16 +1,16 @@
 export const footerIcons = [
   {
-    src: 'src/assets/svg/icons/github.svg',
+    src: '/svg/icons/github.svg',
     alt: 'Github',
     url: 'https://github.com/Jakekap',
   },
   {
-    src: 'src/assets/svg/icons/linkedin.svg',
+    src: '/svg/icons/linkedin.svg',
     alt: 'Linkedin',
     url: 'https://www.linkedin.com/in/jakekap/',
   },
   {
-    src: 'src/assets/svg/icons/instagram.svg',
+    src: '/svg/icons/instagram.svg',
     alt: 'Instagram',
     url: 'https://www.instagram.com/christian_enr/',
   },

@@ -1,5 +1,6 @@
 import Typography from '../Typography'
 import styled from '@emotion/styled'
+import { css } from '@emotion/react'
 import {
   Splide,
   SplideSlide,
@@ -10,6 +11,7 @@ import './splideSyles.css'
 import { MdArrowForwardIos } from 'react-icons/md'
 import Shape from '../Shape'
 import SvgItem from '../SvgItem'
+import { useEffect, useState } from 'react'
 
 const Img = styled('img')({
   marginBottom: '20px',
@@ -23,19 +25,35 @@ const CustomSplideSlide = {
   flexDirection: 'column',
 }
 
+const customSplide = css`
+  @media only screen and (max-width: 1200px) {
+  }
+`
+
 function MyProjects() {
+  const [page, setPage] = useState(2)
+
+  useEffect(() => {
+      if (window.innerWidth < 1200) {
+        setPage(1)
+      } else {
+        setPage(2)
+      }
+  }, [window.innerWidth])
+
+
   return (
     <section style={{ marginBottom: '10rem' }}>
       <div style={{ marginBottom: '3rem', position: 'relative' }}>
         <Shape right>
           <SvgItem
-            src='src/assets/svg/shapes/shape1.svg'
+            src='/svg/shapes/shape1.svg'
             alt='shape1'
           />
         </Shape>
         <Shape left bottom='0'>
           <SvgItem
-            src='src/assets/svg/shapes/shape2.svg'
+            src='/svg/shapes/shape2.svg'
             alt='shape2'
           />
         </Shape>
@@ -43,28 +61,27 @@ function MyProjects() {
           style={{
             position: 'relative',
             zIndex: '1',
-            top: '1.6rem',
+            top: '1.4rem',
           }}
         >
           <Typography
-            bold
-            fontSize='4rem'
-            color='#464446'
-            lineHeight='88%'
-            fontWeight={700}
-            textTransform='uppercase'
-            marginLeft='6rem'
+            header
+            size='4rem'
+            weight={700}
+            margin='0 0 0 6rem'
+
           >
-            My <br />
-            Projects
+            MY <br />
+            PROJECTS
           </Typography>
         </div>
         <Splide
+          css={customSplide}
           hasTrack={false}
-          aria-label='My Projects'
+          aria-label='MY PROJECTS'
           tag='section'
           options={{
-            perPage: 2,
+            perPage: page,
             rewind: true,
             arrows: true,
             pagination: false,
@@ -75,12 +92,8 @@ function MyProjects() {
             <SplideSlide style={CustomSplideSlide}>
               <Img src='src/assets/images/gato1.png' alt='gato1' />
               <Typography
-                bold
-                fontSize='2rem'
-                color='#111111'
-                lineHeight='88%'
-                fontWeight={500}
-                textTransform='uppercase'
+                size='2rem'
+                weight={400}
               >
                 12/10/18 - WEATHER APP
               </Typography>
@@ -88,12 +101,8 @@ function MyProjects() {
             <SplideSlide style={CustomSplideSlide}>
               <Img src='src/assets/images/gato2.png' alt='gato2' />
               <Typography
-                bold
-                fontSize='2rem'
-                color='#111111'
-                lineHeight='88%'
-                fontWeight={500}
-                textTransform='uppercase'
+                size='2rem'
+                weight={400}
               >
                 12/10/18 - WEATHER APP
               </Typography>
@@ -101,12 +110,8 @@ function MyProjects() {
             <SplideSlide style={CustomSplideSlide}>
               <Img src='src/assets/images/gato3.jpg' alt='gato3' />
               <Typography
-                bold
-                fontSize='2rem'
-                color='#111111'
-                lineHeight='88%'
-                fontWeight={500}
-                textTransform='uppercase'
+                size='2rem'
+                weight={400}
               >
                 12/10/18 - WEATHER APP
               </Typography>
@@ -114,12 +119,8 @@ function MyProjects() {
             <SplideSlide style={CustomSplideSlide}>
               <Img src='src/assets/images/gato4.jpg' alt='gato4' />
               <Typography
-                bold
-                fontSize='2rem'
-                color='#111111'
-                lineHeight='88%'
-                fontWeight={500}
-                textTransform='uppercase'
+                size='2rem'
+                weight={400}
               >
                 12/10/18 - WEATHER APP
               </Typography>
@@ -127,12 +128,8 @@ function MyProjects() {
             <SplideSlide style={CustomSplideSlide}>
               <Img src='src/assets/images/gato5.jpg' alt='gato5' />
               <Typography
-                bold
-                fontSize='2rem'
-                color='#111111'
-                lineHeight='88%'
-                fontWeight={500}
-                textTransform='uppercase'
+                size='2rem'
+                weight={400}
               >
                 12/10/18 - WEATHER APP
               </Typography>
@@ -150,15 +147,11 @@ function MyProjects() {
       </div>
       <div>
         <Typography
-          bold
-          fontSize='2rem'
-          color='#464446'
-          lineHeight='88%'
-          fontWeight={500}
-          textDecoration='underline'
-          textTransform='uppercase'
-          cursor='pointer'
-          display='inline'
+          size='2rem'
+          weight={700}
+          underline
+          pointer
+          inline
         >
           SEE ALL PROJECTS --&gt;
         </Typography>

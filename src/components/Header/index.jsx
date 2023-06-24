@@ -11,7 +11,7 @@ const Navbar = styled('nav')({
 
 const NavItem = styled('li')({
   listStyleType: 'none',
-  fontFamily: 'Akshar',
+  fontFamily: 'Akshar, san-serif',
   fontSize: '20px',
   cursor: 'pointer',
   ':hover': {
@@ -20,17 +20,16 @@ const NavItem = styled('li')({
 })
 const TitleContainer = styled('div')({
   display: 'flex',
-  justifyContent: 'space-between',
   alignItems: 'center',
   minWidth: '190px',
-  width: '190px',
   margin: '0 100px',
+  gap: '1rem',
 })
 
 const NavContainer = styled('div')({
   display: 'flex',
   boxSizing: 'border-box',
-  backgroundColor: '#FFF',
+  backgroundColor: 'transparent',
   justifyContent: 'space-between',
   alignItems: 'center',
   padding: '8px 0',
@@ -49,10 +48,8 @@ function Header() {
               alt='Jakekap Logo'
             />
             <Typography
-              letterSpacing='5px'
-              lineHeight='100%'
-              fontWeight={600}
-              fontSize='24px'
+              weight={600}
+              size='24px'
             >
               JAKEKAP
             </Typography>

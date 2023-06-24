@@ -1,28 +1,11 @@
 import PropTypes from 'prop-types'
-import { css, keyframes } from '@emotion/react'
+import { css } from '@emotion/react'
 import { useState } from 'react'
 import Typography from '../Typography'
+import { theme } from '../../constants/theme'
+import { Box } from '../Box'
 
-const min = keyframes`
-  0% {
-    max-width: 100%;
-    margin: 0;
-  }
-  100% {
-    max-width: 20%;
-    margin: 10px;
-  }
-`
-const max = keyframes`
-  0% {
-    max-width: 20%;
-    margin: 10px;
-  }
-  100% {
-    max-width: 100%;
-    margin: 0;
-  }
-`
+
 const cardContainer = css`
   position: relative;
   width: 100%;
@@ -30,44 +13,40 @@ const cardContainer = css`
   justify-content: flex-start;
   align-items: flex-start;
   aspect-ratio: 1/1;
-  background-color: #464446;
+  background-image: ${theme.color.cardGradient};
+  border-radius: 12px;
+  box-shadow: ${theme.color.shadow} 0px 7px 29px 0px;
 `
 const cardItem = css`
   position: absolute;
   margin: 0;
+  max-width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: cursive;
+  font-family: 'Akshar, san-serif';
   padding: 5%;
   aspect-ratio: 1/1;
-  background-color: #ece8e1;
-  box-shadow: 4px 4px 0px 4px rgba(0, 0, 0, 0.25);
+  background-color: ${theme.color.light};
+  box-shadow: ${theme.color.shadow} 0px 7px 29px 0px;
   cursor: pointer;
-  animation: ${max} 0.2s;
+  transition: max-width 0.2s ease-in-out, margin 0.2s ease-in-out;
+  border-radius: 10px;
 `
 const animation = css`
-  animation: ${min} 0.2s;
   max-width: 20%;
   margin: 10px;
 `
 
 function FlipCard({ skill }) {
-  const [styles, setStyles] = useState([cardItem])
-  const toggleAnimation = () => {
-    setStyles((prev) => {
-      const newStyle = [...prev]
-      if (newStyle.length > 1) {
-        newStyle.pop()
-      } else {
-        newStyle.push(animation)
-      }
-      return newStyle
-    })
+  const [openCard, setOpenCard] = useState(false)
+
+  const toggleCard = () => {
+    setOpenCard(!openCard)
   }
   return (
-    <div onClick={toggleAnimation} css={cardContainer}>
-      <div css={styles}>
+    <div onClick={toggleCard} css={cardContainer}>
+      <div css={[cardItem, openCard ? animation : '']}>
         <img
           draggable={false}
           style={{
@@ -79,16 +58,16 @@ function FlipCard({ skill }) {
           alt={skill.name}
         />
       </div>
-      <Typography
-        style={{
-          color: 'white',
-          fontSize: '2rem',
-          margin: '30px 0 0 120px',
-          fontWeight: 'bold',
-        }}
-      >
-        {skill.name}
-      </Typography>
+      <Box test>
+        <Typography
+        color='white'
+        size='2rem'
+        margin='30px 0 0 120px'
+        weight={700}
+        >
+          {skill.name}
+        </Typography>
+      </Box>
     </div>
   )
 }

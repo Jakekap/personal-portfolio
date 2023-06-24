@@ -11,13 +11,15 @@ const formStyle = css`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin: 6rem auto;
+  margin: 6rem 10rem;
   padding-bottom: 10rem;
-  width: 60%;
+  @media only screen and (max-width: 1200px) {
+    margin: 6rem 5rem;
+  }
 `
 const textFieldStyle = css`
+  font-family: 'Akshar', sans-serif;
   width: 100%;
-  font-family: 'Akshar';
   box-sizing: border-box;
   padding: 10px;
   border: none;
@@ -50,35 +52,32 @@ function ContactMe() {
     <section css={contactMeContainer}>
       <Shape left top='-80px'>
         <SvgItem
-          src='src/assets/svg/shapes/shape7.svg'
+          src='/svg/shapes/shape7.svg'
           alt='shape7'
         />
       </Shape>
       <Shape left bottom='5rem'>
         <SvgItem
-          src='src/assets/svg/shapes/shape8.svg'
+          src='/svg/shapes/shape8.svg'
           alt='shape8'
         />
       </Shape>
       <Shape right bottom='0'>
         <SvgItem
-          src='src/assets/svg/shapes/shape9.svg'
+          src='/svg/shapes/shape9.svg'
           alt='shape9'
         />
       </Shape>
       <Typography
-        bold
-        fontSize='64px'
+        header
+        weight={700}
+        size='64px'
         color='#464446'
-        lineHeight='88%'
-        fontWeight={700}
-        textTransform='uppercase'
-        marginLeft='100px'
-        marginBottom='6rem'
+        margin='0 0 6rem 100px'
       >
-        Contact
+        CONTACT
         <br />
-        Me
+        ME
       </Typography>
       <form css={formStyle}>
         <input
@@ -91,8 +90,8 @@ function ContactMe() {
           placeholder="Let's work together..."
           css={[textFieldStyle, textAreaStyle]}
         />
-        <button css={buttonSubmitStyle}>
-          <Typography>Submit</Typography>
+        <button onClick={e => {e.preventDefault()}} css={buttonSubmitStyle}>
+          <Typography pointer>Submit</Typography>
         </button>
       </form>
     </section>

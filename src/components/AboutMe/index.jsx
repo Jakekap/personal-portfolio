@@ -6,14 +6,23 @@ import SvgItem from '../SvgItem'
 const aboutContainer = css`
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   position: relative;
   margin-bottom: 150px;
+  gap: 100px;
+  @media only screen and (max-width: 1200px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `
 const figureStyle = css`
-  width: 600px;
-  height: 100%;
+  max-width: 40%;
   margin: 0;
+`
+const spanStyle = css`
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 2rem;
 `
 
 function AboutMe() {
@@ -22,25 +31,22 @@ function AboutMe() {
       <div>
         <Shape left top='5rem'>
           <SvgItem
-            src='src/assets/svg/shapes/shape6.svg'
+            src='/svg/shapes/shape6.svg'
             alt='shape6'
           />
         </Shape>
         <Typography
-          bold
-          fontSize='64px'
+          header
+          weight={700}
+          size='64px'
           color='#464446'
-          lineHeight='88%'
-          fontWeight={700}
-          textTransform='uppercase'
-          marginLeft='100px'
-          marginBottom='4rem'
+          margin='0 0 4rem 100px'
         >
-          About
+          ABOUT
           <br />
-          Me
+          ME
         </Typography>
-        <Typography fontSize='2rem' marginLeft='6rem'>
+        <Typography size='2rem' marginLeft='6rem'>
           Hi there! <br />
           I&apos;m Christian, a Colombian frontend web
           <br /> developer committed to creating attractive
@@ -48,9 +54,7 @@ function AboutMe() {
           customized solution for your website,
           <br />
           <br /> feel free to{' '}
-          <span
-            style={{ textDecoration: 'underline', cursor: 'pointer' }}
-          >
+          <span css={spanStyle}>
             contact
           </span>{' '}
           me!

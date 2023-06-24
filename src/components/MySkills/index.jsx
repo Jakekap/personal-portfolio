@@ -9,41 +9,36 @@ function MySkills() {
     <section style={{ position: 'relative' }}>
       <Shape left>
         <SvgItem
-          src='src/assets/svg/shapes/shape4.svg'
+          src='/svg/shapes/shape4.svg'
           alt='shape4'
         />
       </Shape>
       <Shape right bottom='0'>
         <SvgItem
-          src='src/assets/svg/shapes/shape5.svg'
+          src='/svg/shapes/shape5.svg'
           alt='shape5'
         />
       </Shape>
       <Typography
-        bold
-        fontSize='4rem'
+        header
+        size='4rem'
         color='#464446'
-        lineHeight='88%'
-        fontWeight={700}
-        textTransform='uppercase'
-        marginLeft='6rem'
-        marginBottom='2rem'
+        weight={700}
+        margin='0 0 2rem 6rem'
       >
-        My <br />
-        Skills
+        MY <br />
+        SKILLS
       </Typography>
       <Typography
-        fontSize='36px'
+        header
+        size='36px'
         color='#464446'
-        lineHeight='88%'
-        fontWeight={600}
-        textTransform='uppercase'
-        marginLeft='6rem'
-        marginBottom='6rem'
+        weight={600}
+        margin='0 0 6rem 0'
       >
-        I have experience with
+        I HAVE EXPERIENCE WITH
         <br />
-        these technologies
+        THESE TECHNOLOGIES
       </Typography>
       <div
         style={{

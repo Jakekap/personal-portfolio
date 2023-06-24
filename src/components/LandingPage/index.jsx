@@ -1,145 +1,126 @@
-import MobileDevicesSVG from '../../assets/svg/mobileDevicesSVG'
+import SvgItem from '../SvgItem'
 import Typography from '../Typography'
+import { css } from '@emotion/react'
+
+const landingPageContainer = css`
+  display: flex;
+  margin: 0 100px 350px;
+  gap: 50px;
+  justify-content: space-between;
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+  @media only screen and (max-width: 1200px) {
+    flex-direction: column;
+    align-items: center;
+  }
+`
+const landingSection = css`
+  @media only screen and (max-width: 1200px) {
+  }
+`
+
+const landingSectionText = css`
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  position: relative;
+  top: 100px;
+  font-size: 3.5vw;
+  @media only screen and (max-width: 1200px) {
+    font-size: 5vw;
+  }
+`
+const bgTypo = css`
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+`
+
 
 function LandingPage() {
   return (
-    <section
-      style={{
-        display: 'flex',
-        minHeight: '900px',
-        margin: '0 100px',
-      }}
+    <div
+      css={landingPageContainer}
     >
-      <div
-        style={{
-          width: '50%',
-          display: 'flex',
-          justifyContent: 'space-between',
-          flexDirection: 'column',
-          position: 'relative',
-        }}
-      >
+      <section css={landingSectionText}>
+      <div css={bgTypo}>
         <Typography
+          align='right'
           invert
           borders
           color='transparent'
-          fontFamily='Archivo Black'
-          textTransform='uppercase'
-          textStroke='1px #0000001A'
-          lineHeight='88%'
-          fontSize='128px'
-          letterSpacing='-0.07em'
-          backdropFilter='blur(2px)'
+          size='2em'
+          weight={700}
+          font='ArchivoBlack, Akshar, san-serif'
+          main
         >
-          Web
-          <br />
-          dev
-          <br />
-          eloper
+          WEB<br/> DEV<br/> ELOPER
         </Typography>
-        <div
-          style={{
-            position: 'absolute',
-            zIndex: '1',
-            top: '50%',
-            transform: 'translateY(-50%)',
-          }}
-        >
-          <Typography fontWeight='bold' fontSize='36px'>
-            Hello!
-          </Typography>
-          <Typography fontWeight='bold' fontSize='48px'>
-            I&rsquo;m Christian Andrade
-          </Typography>
-          <Typography
-            borders
-            borderColor='#464646'
-            color='transparent'
-            fontFamily='Archivo Black'
-            textTransform='uppercase'
-            lineHeight='88%'
-            fontSize='64px'
-            letterSpacing='-0.07em'
-            position='absolute'
-            top='210px'
-            left='50px'
+        <Typography
+          main
+          borders
+          color='transparent'
+          size='1em'
+          font='ArchivoBlack, Akshar, san-serif'
           >
             {'</></></></></>'}
           </Typography>
-          <Typography
-            fontFamily='Archivo Black'
-            textTransform='uppercase'
-            color='#FFB95F'
-            lineHeight='88%'
-            letterSpacing='-0.07em'
-            fontSize='128px'
-          >
-            Web
-            <br /> dev
-            <br />
-            eloper
-          </Typography>
-        </div>
         <Typography
+          align='right'
           invert
           borders
           color='transparent'
-          fontFamily='Archivo Black'
-          textTransform='uppercase'
-          textStroke='1px #0000001A'
-          lineHeight='88%'
-          fontSize='128px'
-          letterSpacing='-0.07em'
-          backdropFilter='blur(2px)'
+          size='2em'
+          weight={700}
+          font='ArchivoBlack, Akshar, san-serif'
+          main
         >
-          Web
-          <br />
-          dev
-          <br />
-          eloper
+          WEB<br/> DEV<br/> ELOPER
         </Typography>
       </div>
-      <div
-        style={{
-          width: '50%',
-          position: 'relative',
-        }}
-      >
-        <div
-          style={{
-            position: 'absolute',
-            top: '10%',
-            zIndex: '1',
-            right: 0,
-          }}
+        <Typography weight={700} size='1em'>
+          Hello!
+        </Typography>
+        <Typography weight={700} size='1em'>
+          I&rsquo;m Christian Andrade
+        </Typography>
+        <Typography
+          color='#FFB95F'
+          size='2em'
+          weight={700}
+          font='ArchivoBlack, Akshar, san-serif'
+          main
         >
-          <MobileDevicesSVG />
+          WEB
+          <br /> DEV
+          <br />
+          ELOPER
+        </Typography>
+      </section>
+      <section css={landingSection}>
+        <div style={{minWidth: '440px', marginTop: '50px'}}>
+          <SvgItem src='/svg/shapes/movile-device.svg' alt='Movile device' />
         </div>
         <div
           style={{
             display: 'grid',
             placeContent: 'center',
-            width: '600px',
-            height: '200px',
             position: 'absolute',
-            top: '63%',
-            right: '50px',
             background:
               'linear-gradient(90deg, #A7DDF0 -14.03%, rgba(157, 224, 253, 0.51) 46.91%, rgba(217, 217, 217, 0) 85.97%)',
           }}
         >
           <Typography
-            textTransform='uppercase'
-            textAlign='center'
-            fontSize='32px'
-            fontWeight={600}
+            size='32px'
+            margin='40px 60px'
+            weight={600}
           >
-            Turning ideas intro digital <br />
-            reality {'{・・・}'}
+            TURNING IDEAS INTRO DIGITAL <br />
+            REALITY {'{・・・}'}
           </Typography>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   )
 }
 
