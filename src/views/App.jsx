@@ -9,6 +9,8 @@ import Footer from '../components/Footer'
 import styled from '@emotion/styled'
 import { ThemeProvider, Global } from '@emotion/react'
 import { theme, globalStyles } from '../constants/theme'
+import Projects from './Projects'
+import { Route } from 'wouter'
 
 const AppContainer = styled.main({
   margin: '0 100px',
@@ -19,14 +21,17 @@ function App() {
     <ThemeProvider theme={theme}>
     <Global styles={globalStyles} />
       <Header />
-      <AppContainer>
-        <LandingPage />
-        <MyProjects />
-        <WorkExperience />
-        <MySkills />
-        <AboutMe />
-        <ContactMe />
-      </AppContainer>
+      <Route path='/'>
+        <AppContainer>
+          <LandingPage />
+          <MyProjects />
+          <WorkExperience />
+          <MySkills />
+          <AboutMe />
+          <ContactMe />
+        </AppContainer>
+      </Route>
+      <Route path='/projects' component={Projects} />
       <Footer />
     </ThemeProvider>
   )
