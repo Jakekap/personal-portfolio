@@ -4,10 +4,9 @@
     padding: 0;
     width: 50px;
     height: 50px;
-
-    & > svg {
-        height: 100%;
-        width: 100%;
-        fill: #ECE8E1;
-    }
+}
+.custom__arrow > svg {
+    height: 100%;
+    width: 100%;
+    fill: #ECE8E1;
 }
