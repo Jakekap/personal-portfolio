@@ -19,21 +19,25 @@ export const globalStyles = css`
   font-family: 'Akshar';
   src: url('/fonts/akshar/Akshar-Light.woff2') format('woff2');
   font-weight: 300;
+  font-display: swap;
   }
   @font-face {
     font-family: 'Akshar';
     src: url('/fonts/akshar/Akshar-Regular.woff2') format('woff2');
     font-weight: 400;
+    font-display: swap;
   }
   @font-face {
     font-family: 'Akshar';
     src: url('/fonts/akshar/Akshar-Bold.woff2') format('woff2');
     font-weight: 700;
+    font-display: swap;
   }
   @font-face {
     font-family: 'ArchivoBlack';
     src: url('/fonts/archivo-black/ArchivoBlack-Regular.woff2') format('woff2');
     font-weight: 700;
+    font-display: swap;
   }
   * {
     box-sizing: border-box;
