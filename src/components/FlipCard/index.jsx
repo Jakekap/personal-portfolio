@@ -3,7 +3,6 @@ import { css } from '@emotion/react'
 import { useState } from 'react'
 import Typography from '../Typography'
 import { theme } from '../../constants/theme'
-import { Box } from '../Box'
 
 
 const cardContainer = css`
@@ -58,16 +57,14 @@ function FlipCard({ skill }) {
           alt={skill.name}
         />
       </div>
-      <Box test>
         <Typography
         color='white'
         size='2rem'
-        margin='30px 0 0 120px'
+        margin='20px 0 0 100px'
         weight={700}
         >
           {skill.name}
         </Typography>
-      </Box>
     </div>
   )
 }

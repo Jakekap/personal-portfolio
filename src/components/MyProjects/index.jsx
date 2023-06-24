@@ -68,7 +68,7 @@ function MyProjects() {
             header
             size='4rem'
             weight={700}
-            margin='0 0 0 6rem'
+            margin='0 0 0 3rem'
 
           >
             MY <br />

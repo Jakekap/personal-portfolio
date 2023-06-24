@@ -4,16 +4,18 @@ import { css } from '@emotion/react'
 
 const landingPageContainer = css`
   display: flex;
-  margin: 0 100px 350px;
+  margin: 0 10% 350px;
   gap: 50px;
   justify-content: space-between;
 /* Extra large devices (large laptops and desktops, 1200px and up) */
   @media only screen and (max-width: 1200px) {
     flex-direction: column;
     align-items: center;
+    margin: 0 0 350px 0;
   }
 `
 const landingSection = css`
+  width: 100%;
   @media only screen and (max-width: 1200px) {
   }
 `
@@ -24,9 +26,10 @@ const landingSectionText = css`
   flex-direction: column;
   position: relative;
   top: 100px;
-  font-size: 3.5vw;
+  font-size: 3.5rem;
+  width: 100%;
   @media only screen and (max-width: 1200px) {
-    font-size: 5vw;
+    font-size: 2rem;
   }
 `
 const bgTypo = css`
@@ -49,7 +52,7 @@ function LandingPage() {
           invert
           borders
           color='transparent'
-          size='2em'
+          size='6rem'
           weight={700}
           font='ArchivoBlack, Akshar, san-serif'
           main
@@ -60,7 +63,7 @@ function LandingPage() {
           main
           borders
           color='transparent'
-          size='1em'
+          size='5rem'
           font='ArchivoBlack, Akshar, san-serif'
           >
             {'</></></></></>'}
@@ -70,7 +73,7 @@ function LandingPage() {
           invert
           borders
           color='transparent'
-          size='2em'
+          size='6rem'
           weight={700}
           font='ArchivoBlack, Akshar, san-serif'
           main
@@ -86,7 +89,7 @@ function LandingPage() {
         </Typography>
         <Typography
           color='#FFB95F'
-          size='2em'
+          size='6rem'
           weight={700}
           font='ArchivoBlack, Akshar, san-serif'
           main
@@ -98,7 +101,7 @@ function LandingPage() {
         </Typography>
       </section>
       <section css={landingSection}>
-        <div style={{minWidth: '440px', marginTop: '50px'}}>
+        <div style={{marginTop: '50px'}}>
           <SvgItem src='/svg/shapes/movile-device.svg' alt='Movile device' />
         </div>
         <div
@@ -111,7 +114,7 @@ function LandingPage() {
           }}
         >
           <Typography
-            size='32px'
+            size='2rem'
             margin='40px 60px'
             weight={600}
           >

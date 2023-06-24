@@ -20,7 +20,16 @@ const expContainer = css`
     justify-content: center;
   }
 `
-
+const expItem = css`
+  width: 50%;
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  grid-auto-flow: column;
+  margin-bottom: 3rem;
+  @media only screen and (max-width: 992px) {
+    width: 100%;
+  }
+`
 function WorkExperience() {
   return (
     <section css={workExperienceStyle}>
@@ -45,13 +54,7 @@ function WorkExperience() {
           return (
             <div
               key={index}
-              style={{
-                width: '50%',
-                display: 'grid',
-                gridTemplateColumns: '60px 1fr',
-                gridAutoFlow: 'column',
-                marginBottom: '3rem',
-              }}
+              css={expItem}
             >
               <IconContext.Provider
                 value={{

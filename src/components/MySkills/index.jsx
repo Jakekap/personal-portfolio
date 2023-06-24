@@ -24,14 +24,14 @@ function MySkills() {
         size='4rem'
         color='#464446'
         weight={700}
-        margin='0 0 2rem 6rem'
+        margin='0 0 3rem 3rem'
       >
         MY <br />
         SKILLS
       </Typography>
       <Typography
         header
-        size='36px'
+        size='3rem'
         color='#464446'
         weight={600}
         margin='0 0 6rem 0'

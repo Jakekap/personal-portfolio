@@ -46,7 +46,16 @@ export const globalStyles = css`
     background-color: ${theme.color.background};
     font-size: 16px;
     font-family: 'Akshar', san-serif;
-  }
+    @media (max-width: 1200px) {
+      font-size: 14px;
+    }
+    @media (max-width: 992px) {
+      font-size: 12px;
+    }
+    /* Extra small devices (phones, 600px and down) */
+    @media only screen and (max-width: 600px) {
+      font-size: 10px;
+    }
   body {
     margin: 0;
   }

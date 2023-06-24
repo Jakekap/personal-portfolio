@@ -4,11 +4,13 @@ import { css } from '@emotion/react'
 import SvgItem from '../SvgItem'
 
 const aboutContainer = css`
+  position: relative;
+  margin-bottom: 150px;
+`
+const aboutSection = css`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
-  margin-bottom: 150px;
   gap: 100px;
   @media only screen and (max-width: 1200px) {
     flex-direction: column;
@@ -18,6 +20,9 @@ const aboutContainer = css`
 const figureStyle = css`
   max-width: 40%;
   margin: 0;
+  @media only screen and (max-width: 1200px) {
+    max-width: 90%;
+  }
 `
 const spanStyle = css`
   text-decoration: underline;
@@ -28,8 +33,7 @@ const spanStyle = css`
 function AboutMe() {
   return (
     <div css={aboutContainer}>
-      <div>
-        <Shape left top='5rem'>
+        <Shape fill right top='5rem'>
           <SvgItem
             src='/svg/shapes/shape6.svg'
             alt='shape6'
@@ -38,39 +42,40 @@ function AboutMe() {
         <Typography
           header
           weight={700}
-          size='64px'
+          size='4rem'
           color='#464446'
-          margin='0 0 4rem 100px'
+          margin='0 0 3rem 3rem'
         >
           ABOUT
           <br />
           ME
         </Typography>
-        <Typography size='2rem' marginLeft='6rem'>
-          Hi there! <br />
-          I&apos;m Christian, a Colombian frontend web
-          <br /> developer committed to creating attractive
-          <br /> and efficient websites. If you need a<br />{' '}
-          customized solution for your website,
-          <br />
-          <br /> feel free to{' '}
-          <span css={spanStyle}>
-            contact
-          </span>{' '}
-          me!
-        </Typography>
-      </div>
-      <figure css={figureStyle}>
-        <img
-          style={{
-            width: '100%',
-            aspectRatio: '1/1',
-            objectFit: 'cover',
-          }}
-          src='/images/chris.jpg'
-          alt='Christian Andrade'
-        />
-      </figure>
+        <div css={aboutSection}>
+          <Typography size='2rem' marginLeft='6rem'>
+            Hi there! <br />
+            I&apos;m Christian, a Colombian frontend web
+            <br /> developer committed to creating attractive
+            <br /> and efficient websites. If you need a<br />{' '}
+            customized solution for your website,
+            <br />
+            <br /> feel free to{' '}
+            <span css={spanStyle}>
+              contact
+            </span>{' '}
+            me!
+          </Typography>
+          <figure css={figureStyle}>
+            <img
+              style={{
+                width: '100%',
+                aspectRatio: '1/1',
+                objectFit: 'cover',
+              }}
+              src='/images/chris.jpg'
+              alt='Christian Andrade'
+            />
+          </figure>
+        </div>
     </div>
   )
 }

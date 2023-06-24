@@ -16,6 +16,9 @@ const formStyle = css`
   @media only screen and (max-width: 1200px) {
     margin: 6rem 5rem;
   }
+  @media only screen and (max-width: 600px) {
+    margin: 6rem 2rem;
+  }
 `
 const textFieldStyle = css`
   font-family: 'Akshar', sans-serif;
@@ -71,9 +74,9 @@ function ContactMe() {
       <Typography
         header
         weight={700}
-        size='64px'
+        size='4rem'
         color='#464446'
-        margin='0 0 6rem 100px'
+        margin='0 0 3rem 3rem'
       >
         CONTACT
         <br />

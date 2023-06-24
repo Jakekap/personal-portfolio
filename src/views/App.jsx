@@ -12,9 +12,14 @@ import { theme, globalStyles } from '../constants/theme'
 import Projects from './Projects'
 import { Route } from 'wouter'
 
-const AppContainer = styled.main({
-  margin: '0 100px',
-})
+const AppContainer = styled.main`
+  margin: 0 10%;
+  /* Extra small devices (phones, 600px and down) */
+  @media only screen and (max-width: 600px) {
+    margin: 0 10px;
+  }
+`
+
 
 function App() {
   return (

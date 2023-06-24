@@ -5,39 +5,44 @@ import Typography from '../Typography'
 import { Link } from 'wouter'
 import { theme } from '../../constants/theme'
 
-const Navbar = styled('nav')({
-  display: 'flex',
-  minWidth: '400px',
-  margin: '0 100px',
-  gap: '2rem',
-})
+const NavContainer = styled.div`
+  display: flex;
+  box-sizing: border-box;
+  background-color: transparent;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  @media (max-width: 1200px) {
+    justify-content: center;
+  }
+`
 
+const Navbar = styled.nav`
+  display: flex;
+  margin: 0 100px;
+  gap: 2rem;
+  @media (max-width: 1200px) {
+    display: none;
+  }
+`
 const LinkStyle = css`
   list-style-type: none;
   color: ${theme.color.primary};
   text-decoration: none;
-  font-size: 20px;
+  font-size: 1.3rem;
   cursor: pointer;
   :hover {
     text-decoration: underline;
   }
 `
-const TitleContainer = styled('div')({
-  display: 'flex',
-  alignItems: 'center',
-  minWidth: '190px',
-  margin: '0 100px',
-  gap: '1rem',
-})
+const TitleContainer = styled.div`
+  display: flex;
+  align-items: center;
+  min-width: 190px;
+  margin: 0 3rem;
+  gap: 1rem;
+`
 
-const NavContainer = styled('div')({
-  display: 'flex',
-  boxSizing: 'border-box',
-  backgroundColor: 'transparent',
-  justifyContent: 'space-between',
-  alignItems: 'center',
-  padding: '8px 0',
-})
 const Logo = styled('img')({
   width: '50px',
 })
@@ -53,7 +58,7 @@ function Header() {
             />
             <Typography
               weight={600}
-              size='24px'
+              size='2rem'
             >
               JAKEKAP
             </Typography>
