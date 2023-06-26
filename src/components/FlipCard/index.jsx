@@ -4,7 +4,6 @@ import { useState } from 'react'
 import Typography from '../Typography'
 import { theme } from '../../constants/theme'
 
-
 const cardContainer = css`
   position: relative;
   width: 100%;
@@ -57,14 +56,14 @@ function FlipCard({ skill }) {
           alt={skill.name}
         />
       </div>
-        <Typography
+      <Typography
         color='white'
         size='2rem'
-        margin='20px 0 0 100px'
+        margin='7% 0 0 30%'
         weight={700}
-        >
-          {skill.name}
-        </Typography>
+      >
+        {skill.name}
+      </Typography>
     </div>
   )
 }
