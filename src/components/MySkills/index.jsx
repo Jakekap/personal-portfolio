@@ -8,16 +8,10 @@ function MySkills() {
   return (
     <section style={{ position: 'relative' }}>
       <Shape left>
-        <SvgItem
-          src='/svg/shapes/shape4.svg'
-          alt='shape4'
-        />
+        <SvgItem src='/svg/shapes/shape4.svg' alt='shape4' />
       </Shape>
       <Shape right bottom='0'>
-        <SvgItem
-          src='/svg/shapes/shape5.svg'
-          alt='shape5'
-        />
+        <SvgItem src='/svg/shapes/shape5.svg' alt='shape5' />
       </Shape>
       <Typography
         header
@@ -51,7 +45,7 @@ function MySkills() {
         }}
       >
         {skills.map((el, index) => {
-          return <FlipCard key={index} skill={el} />
+          return <FlipCard key={index} index={index} skill={el} />
         })}
       </div>
     </section>

@@ -20,11 +20,10 @@ const AppContainer = styled.main`
   }
 `
 
-
 function App() {
   return (
     <ThemeProvider theme={theme}>
-    <Global styles={globalStyles} />
+      <Global styles={globalStyles} />
       <Header />
       <Route path='/'>
         <AppContainer>

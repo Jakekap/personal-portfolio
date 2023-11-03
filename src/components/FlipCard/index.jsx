@@ -1,8 +1,31 @@
 import PropTypes from 'prop-types'
-import { css } from '@emotion/react'
+import { css, keyframes } from '@emotion/react'
 import { useState } from 'react'
 import Typography from '../Typography'
 import { theme } from '../../constants/theme'
+import styled from '@emotion/styled'
+
+const parpadeo = keyframes`
+  0%, 100% {
+        opacity: 0.2;
+    }
+    50% {
+        opacity: 0.5;
+    }
+`
+
+const ClickHere = styled.div`
+  position: absolute;
+  transform: scaleY(2);
+  top: 40%;
+  left: 15%;
+  font-size: 3.4rem;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  animation: ${parpadeo} 1.5s infinite;
+  z-index: 100;
+`
 
 const cardContainer = css`
   position: relative;
@@ -36,14 +59,17 @@ const animation = css`
   margin: 10px;
 `
 
-function FlipCard({ skill }) {
+function FlipCard({ skill, index }) {
   const [openCard, setOpenCard] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
 
   const toggleCard = () => {
     setOpenCard(!openCard)
+    setIsOpen(true)
   }
   return (
     <div onClick={toggleCard} css={cardContainer}>
+      {index === 2 && !isOpen && <ClickHere>CLICK ME</ClickHere>}
       <div css={[cardItem, openCard ? animation : '']}>
         <img
           draggable={false}
@@ -71,4 +97,5 @@ function FlipCard({ skill }) {
 export default FlipCard
 FlipCard.propTypes = {
   skill: PropTypes.object,
+  index: PropTypes.number,
 }
