@@ -1,9 +1,9 @@
 import styled from '@emotion/styled'
 import { IconContext } from 'react-icons'
-import { css } from '@emotion/react'
+// import { css } from '@emotion/react'
 import Typography from '../Typography'
-import { Link } from 'wouter'
-import { theme } from '../../constants/theme'
+// import { Link } from 'react-router-dom'
+// import { theme } from '../../constants/theme'
 
 const NavContainer = styled.div`
   display: flex;
@@ -25,16 +25,16 @@ const Navbar = styled.nav`
     display: none;
   }
 `
-const LinkStyle = css`
-  list-style-type: none;
-  color: ${theme.color.primary};
-  text-decoration: none;
-  font-size: 1.3rem;
-  cursor: pointer;
-  :hover {
-    text-decoration: underline;
-  }
-`
+// const LinkStyle = css`
+//   list-style-type: none;
+//   color: ${theme.color.primary};
+//   text-decoration: none;
+//   font-size: 1.3rem;
+//   cursor: pointer;
+//   :hover {
+//     text-decoration: underline;
+//   }
+// `
 const TitleContainer = styled.div`
   display: flex;
   align-items: center;
@@ -52,31 +52,12 @@ function Header() {
       <IconContext.Provider value={{ size: '2rem' }}>
         <NavContainer>
           <TitleContainer>
-            <Logo
-              src='/images/jakekap_logo.png'
-              alt='Jakekap Logo'
-            />
-            <Typography
-              weight={600}
-              size='2rem'
-            >
+            <Logo src='/images/jakekap_logo.png' alt='Jakekap Logo' />
+            <Typography weight={600} size='2rem'>
               JAKEKAP
             </Typography>
           </TitleContainer>
-          <Navbar>
-            <Link css={LinkStyle} href='/projects'>
-              My projects
-            </Link>
-            <Link css={LinkStyle} href='/'>
-              Experience
-            </Link>
-            <Link css={LinkStyle} href='#'>
-              About me
-            </Link>
-            <Link css={LinkStyle} href='#'>
-              Contact
-            </Link>
-          </Navbar>
+          <Navbar></Navbar>
           {/* <CgMenu /> */}
         </NavContainer>
       </IconContext.Provider>

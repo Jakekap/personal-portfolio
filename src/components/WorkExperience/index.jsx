@@ -1,10 +1,9 @@
 import Typography from '../Typography'
 import Shape from '../Shape'
 import { css } from '@emotion/react'
-import { MdArrowForwardIos } from 'react-icons/md'
-import { IconContext } from 'react-icons'
 import { experienceData } from '../../constants'
 import SvgItem from '../SvgItem'
+import Accordion from '../Accordion'
 
 const workExperienceStyle = css`
   position: relative;
@@ -20,24 +19,12 @@ const expContainer = css`
     justify-content: center;
   }
 `
-const expItem = css`
-  width: 50%;
-  display: grid;
-  grid-template-columns: 60px 1fr;
-  grid-auto-flow: column;
-  margin-bottom: 3rem;
-  @media only screen and (max-width: 992px) {
-    width: 100%;
-  }
-`
+
 function WorkExperience() {
   return (
     <section css={workExperienceStyle}>
       <Shape left>
-        <SvgItem
-          src='/svg/shapes/shape3.svg'
-          alt='shape3'
-        />
+        <SvgItem src='/svg/shapes/shape3.svg' alt='shape3' />
       </Shape>
       <Typography
         header
@@ -52,34 +39,11 @@ function WorkExperience() {
       <div css={expContainer}>
         {experienceData.map((experience, index) => {
           return (
-            <div
+            <Accordion
+              accordionText={experience.description}
               key={index}
-              css={expItem}
-            >
-              <IconContext.Provider
-                value={{
-                  color: '#464446',
-                  size: '40px',
-                  style: {
-                    gridRow: '1 / span 2',
-                    margin: 'auto 0',
-                  },
-                }}
-              >
-                <MdArrowForwardIos />
-              </IconContext.Provider>
-
-              <Typography size='2.3rem' weight={700}>
-                {`${experience.profession} AT ${experience.company}`}
-              </Typography>
-              <Typography
-                color='#979797'
-                size='2rem'
-                weight={400}
-              >
-                {`${experience.startDate} - ${experience.endDate}`}
-              </Typography>
-            </div>
+              experience={experience}
+            />
           )
         })}
       </div>

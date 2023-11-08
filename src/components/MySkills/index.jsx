@@ -1,8 +1,8 @@
 import Typography from '../Typography'
 import Shape from '../Shape'
 import skills from './skills'
-import FlipCard from '../FlipCard'
 import SvgItem from '../SvgItem'
+import Carousel from '../Carousel'
 
 function MySkills() {
   return (
@@ -34,20 +34,7 @@ function MySkills() {
         <br />
         THESE TECHNOLOGIES
       </Typography>
-      <div
-        style={{
-          display: 'grid',
-          placeContent: 'center',
-          gridTemplateColumns: 'repeat(auto-fill, 300px)',
-          gridAutoFlow: 'row',
-          gap: '30px',
-          marginBottom: '15rem',
-        }}
-      >
-        {skills.map((el, index) => {
-          return <FlipCard key={index} index={index} skill={el} />
-        })}
-      </div>
+      <Carousel skills={skills} />
     </section>
   )
 }

@@ -22,11 +22,15 @@ export const experienceData = [
     company: 'MONSTER TRUCK NINJA',
     startDate: 'JUN. 2021',
     endDate: 'DEC. 2021',
+    description:
+      'During my internship at MTN, I had the opportunity to enhance my artistic skills by crafting graphic content for the company. I was involved in creating 3D environments and characters for social media influencers. Additionally, I contributed to the animation process for a series of exercises designed for children.',
   },
   {
     profession: 'REACT FRONT-END DEVELOPER',
     company: 'NETUX',
     startDate: 'DEC. 2021',
     endDate: 'NOW',
+    description:
+      'I am currently working as a React Front-End Developer at Netux.',
   },
 ]

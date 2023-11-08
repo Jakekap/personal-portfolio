@@ -43,19 +43,17 @@ const textAreaStyle = css`
 `
 const buttonSubmitStyle = css`
   font-weight: 700;
-  color: ${theme.color.white};
   border: none;
   font-size: 1rem;
   padding: 10px;
   width: 100%;
   background-color: #464646;
+  border: 2px dashed #464646;
   cursor: pointer;
-  & p {
-    color: #fff;
-    font-weight: bold;
-  }
+  color: #fff;
   :hover {
-    background-color: #7f7f7f;
+    background-color: #fff;
+    color: #464646;
   }
 `
 
