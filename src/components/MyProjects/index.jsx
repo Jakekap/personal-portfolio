@@ -25,7 +25,7 @@ const CustomSplideSlide = {
 }
 
 const SeeAllProjects = styled.div`
-  display: flex;
+  display: inline-flex;
   gap: 1rem;
   img {
     transition: transform 0.1s ease-in-out;
