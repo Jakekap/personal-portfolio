@@ -1,35 +1,34 @@
-import SvgItem from '../SvgItem'
 import Typography from '../Typography'
 import { css } from '@emotion/react'
+import Atropos from 'atropos/react'
+import 'atropos/css'
 
 const landingPageContainer = css`
   display: flex;
-  margin: 0 10% 350px;
+  margin: 80px 0;
   gap: 50px;
-  justify-content: space-between;
-  /* Extra large devices (large laptops and desktops, 1200px and up) */
+  justify-content: center;
   @media only screen and (max-width: 1200px) {
     flex-direction: column;
     align-items: center;
-    margin: 0 0 350px 0;
   }
 `
-const landingSection = css`
-  width: 100%;
+const rightSection = css`
+  width: 50%;
   @media only screen and (max-width: 1200px) {
+    width: 100%;
   }
 `
 
-const landingSectionText = css`
+const leftSection = css`
   display: flex;
   gap: 20px;
   flex-direction: column;
   position: relative;
-  top: 100px;
   font-size: 3.5rem;
-  width: 100%;
+  width: 50%;
   @media only screen and (max-width: 1200px) {
-    font-size: 2rem;
+    width: 100%;
   }
 `
 const bgTypo = css`
@@ -39,10 +38,18 @@ const bgTypo = css`
   height: 100%;
 `
 
+const atropos = css`
+  .atropos-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+`
+
 function LandingPage() {
   return (
     <div css={landingPageContainer}>
-      <section css={landingSectionText}>
+      <section css={leftSection}>
         <div css={bgTypo}>
           <Typography
             align='right'
@@ -101,18 +108,57 @@ function LandingPage() {
           ELOPER
         </Typography>
       </section>
-      <section css={landingSection}>
-        <div style={{ marginTop: '50px' }}>
-          <SvgItem
-            src='/svg/shapes/movile-device.svg'
-            alt='Movile device'
-          />
+      <section css={rightSection}>
+        <div style={{ margin: '0 auto' }}>
+          <Atropos
+            css={atropos}
+            activeOffset={40}
+            shadowScale={0}
+            className='atropos my-atropos'
+          >
+            <div style={{ position: 'relative' }}>
+              <img
+                style={{ width: '100%', marginBottom: '18%' }}
+                src='/svg/shapes/back-web.svg'
+                data-atropos-offset='-6'
+              />
+              <img
+                style={{
+                  width: '50%',
+                  position: 'absolute',
+                  left: '8%',
+                  top: '13%',
+                }}
+                src='/svg/shapes/front-web.svg'
+                data-atropos-offset='-3'
+              />
+              <img
+                style={{
+                  width: '40%',
+                  position: 'absolute',
+                  top: '18%',
+                  right: '3%',
+                }}
+                src='/svg/shapes/back-mobile.svg'
+                data-atropos-offset='3'
+              />
+              <img
+                style={{
+                  width: '25%',
+                  position: 'absolute',
+                  top: '35%',
+                  right: '10%',
+                }}
+                src='/svg/shapes/front-mobile.svg'
+                data-atropos-offset='6'
+              />
+            </div>
+          </Atropos>
         </div>
         <div
           style={{
             display: 'grid',
             placeContent: 'center',
-            position: 'absolute',
             background:
               'linear-gradient(90deg, #A7DDF0 -14.03%, rgba(157, 224, 253, 0.51) 46.91%, rgba(217, 217, 217, 0) 85.97%)',
           }}

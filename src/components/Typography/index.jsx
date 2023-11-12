@@ -14,7 +14,7 @@ const CustomParagraph = styled.p((props) => ({
   margin: props.margin || 0,
   lineHeight: props.main || props.header ? '88%' : '',
   letterSpacing: props.main ? '-0.07em' : '',
-  alignText: props.align,
+  textAlign: props.align,
   width: props.width,
   '@media (max-width: 1200px)': {
     margin: props.margin || 0,

@@ -16,6 +16,9 @@ export const footerIcons = [
   },
 ]
 
+export const cvUrl =
+  'https://drive.google.com/u/0/uc?id=1IFUnwzpjmUN3W5HpwDi2sWW12ohKwlRp&export=download'
+
 export const experienceData = [
   {
     profession: '3D ARTIST',

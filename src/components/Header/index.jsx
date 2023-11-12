@@ -1,9 +1,9 @@
 import styled from '@emotion/styled'
 import { IconContext } from 'react-icons'
-// import { css } from '@emotion/react'
+import { css } from '@emotion/react'
 import Typography from '../Typography'
-// import { Link } from 'react-router-dom'
-// import { theme } from '../../constants/theme'
+import { useNavigate, Link } from 'react-router-dom'
+import { theme } from '../../constants/theme'
 
 const NavContainer = styled.div`
   display: flex;
@@ -16,7 +16,6 @@ const NavContainer = styled.div`
     justify-content: center;
   }
 `
-
 const Navbar = styled.nav`
   display: flex;
   margin: 0 100px;
@@ -25,18 +24,19 @@ const Navbar = styled.nav`
     display: none;
   }
 `
-// const LinkStyle = css`
-//   list-style-type: none;
-//   color: ${theme.color.primary};
-//   text-decoration: none;
-//   font-size: 1.3rem;
-//   cursor: pointer;
-//   :hover {
-//     text-decoration: underline;
-//   }
-// `
-const TitleContainer = styled.div`
+const linkStyle = css`
+  list-style-type: none;
+  color: ${theme.color.primary};
+  text-decoration: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  :hover {
+    text-decoration: underline;
+  }
+`
+const TitleContainer = styled.button`
   display: flex;
+  cursor: pointer;
   align-items: center;
   min-width: 190px;
   margin: 0 3rem;
@@ -47,17 +47,34 @@ const Logo = styled('img')({
   width: '50px',
 })
 function Header() {
+  const navigate = useNavigate()
+  const handleRedirect = () => {
+    navigate('/')
+  }
   return (
     <header>
       <IconContext.Provider value={{ size: '2rem' }}>
         <NavContainer>
-          <TitleContainer>
+          <TitleContainer onClick={handleRedirect}>
             <Logo src='/images/jakekap_logo.png' alt='Jakekap Logo' />
-            <Typography weight={600} size='2rem'>
+            <Typography pointer weight={600} size='2rem'>
               JAKEKAP
             </Typography>
           </TitleContainer>
-          <Navbar></Navbar>
+          <Navbar>
+            <Link css={linkStyle} to='/projects'>
+              My projects
+            </Link>
+            <Link css={linkStyle} to='/'>
+              Experience
+            </Link>
+            <Link css={linkStyle} to='#'>
+              About me
+            </Link>
+            <Link css={linkStyle} to='#'>
+              Contact
+            </Link>
+          </Navbar>
           {/* <CgMenu /> */}
         </NavContainer>
       </IconContext.Provider>

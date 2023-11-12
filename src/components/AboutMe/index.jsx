@@ -4,13 +4,18 @@ import { css } from '@emotion/react'
 import SvgItem from '../SvgItem'
 
 const aboutContainer = css`
+  display: flex;
   position: relative;
   margin-bottom: 150px;
+  @media only screen and (max-width: 1200px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `
 const aboutSection = css`
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 100px;
   margin: 0 0 3rem 3rem;
   @media only screen and (max-width: 1200px) {
@@ -18,11 +23,21 @@ const aboutSection = css`
     align-items: center;
   }
 `
-const figureStyle = css`
-  max-width: 40%;
-  margin: 0;
+
+const photoStyle = css`
+  width: 50%;
+  height: 600px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
   @media only screen and (max-width: 1200px) {
-    max-width: 90%;
+    height: 500px;
+    width: 70%;
+    object-fit: cover;
+    clip-path: none;
+  }
+  @media only screen and (max-width: 600px) {
+    width: 90%;
   }
 `
 const spanStyle = css`
@@ -37,39 +52,25 @@ function AboutMe() {
       <Shape fill right top='5rem'>
         <SvgItem src='/svg/shapes/shape6.svg' alt='shape6' />
       </Shape>
-      <Typography
-        header
-        weight={700}
-        size='4rem'
-        color='#464446'
-        margin='0 0 3rem 3rem'
-      >
-        ABOUT
-        <br />
-        ME
-      </Typography>
       <div css={aboutSection}>
+        <Typography header weight={700} size='4rem' color='#464446'>
+          ABOUT
+          <br />
+          ME
+        </Typography>
         <Typography size='2rem' marginLeft='6rem'>
           Hi there! <br />
-          I&apos;m Christian, a Colombian frontend web
-          <br /> developer committed to creating attractive
-          <br /> and efficient websites. If you need a<br />{' '}
-          customized solution for your website,
-          <br />
-          <br /> feel free to <span css={spanStyle}>contact</span> me!
+          I&apos;m Christian, a Colombian frontend web developer
+          committed to creating attractive and efficient websites. If
+          you need a customized solution for your website, feel free
+          to <span css={spanStyle}>contact</span> me!
         </Typography>
-        <figure css={figureStyle}>
-          <img
-            style={{
-              width: '100%',
-              aspectRatio: '1/1',
-              objectFit: 'cover',
-            }}
-            src='/images/chris.jpg'
-            alt='Christian Andrade'
-          />
-        </figure>
       </div>
+      <img
+        css={photoStyle}
+        src='/images/chris.jpg'
+        alt='Christian Andrade'
+      />
     </div>
   )
 }

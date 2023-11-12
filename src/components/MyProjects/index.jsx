@@ -1,6 +1,5 @@
 import Typography from '../Typography'
 import styled from '@emotion/styled'
-import { css } from '@emotion/react'
 import {
   Splide,
   SplideSlide,
@@ -25,9 +24,22 @@ const CustomSplideSlide = {
   flexDirection: 'column',
 }
 
-const customSplide = css`
-  @media only screen and (max-width: 1200px) {
+const SeeAllProjects = styled.div`
+  display: flex;
+  gap: 1rem;
+  img {
+    transition: transform 0.1s ease-in-out;
   }
+  :hover {
+    cursor: pointer;
+    img {
+      transform: translateX(10px);
+    }
+  }
+`
+
+const CustomArrow = styled.img`
+  width: 2rem;
 `
 
 function MyProjects() {
@@ -63,12 +75,11 @@ function MyProjects() {
             weight={700}
             margin='0 0 0 3rem'
           >
-            MY <br />
+            OUTSTANDING <br />
             PROJECTS
           </Typography>
         </div>
         <Splide
-          css={customSplide}
           hasTrack={false}
           aria-label='MY PROJECTS'
           tag='section'
@@ -122,11 +133,12 @@ function MyProjects() {
           </div>
         </Splide>
       </div>
-      <div>
+      <SeeAllProjects>
         <Typography size='2rem' weight={700} underline pointer inline>
-          SEE ALL PROJECTS --&gt;
+          SEE ALL PROJECTS
         </Typography>
-      </div>
+        <CustomArrow src='/svg/icons/right-arrow.svg' alt='arrow' />
+      </SeeAllProjects>
     </section>
   )
 }

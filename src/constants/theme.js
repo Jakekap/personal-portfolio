@@ -44,6 +44,8 @@ export const globalStyles = css`
   }
   button {
     font-family: 'Akshar', sans-serif;
+    border: none;
+    background-color: transparent;
   }
   html {
     background-color: ${theme.color.background};
