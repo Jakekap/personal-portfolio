@@ -22,7 +22,7 @@ const CardImage = styled.img`
 export default function Masonry({ images }) {
   return (
     <MasonryContainer>
-      {images.map((image, index) => (
+      {images?.map((image, index) => (
         <MasonryCard key={index}>
           <CardImage src={image} alt={'image' + index} />
         </MasonryCard>

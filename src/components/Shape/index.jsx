@@ -1,11 +1,10 @@
 import styled from '@emotion/styled'
-import PropTypes from 'prop-types'
 
 const CustomShape = styled.div(
-  ({ fill, right, left, top, bottom, rotate }) => ({
+  ({ width, right, left, top, bottom, rotate }) => ({
     position: 'absolute',
     zIndex: '-1',
-    width: fill ? '100%' : 'auto',
+    width: width || 'auto',
     right: right ? 0 : 'auto',
     left: left ? 0 : 'auto',
     top: top || 'auto',
@@ -14,16 +13,8 @@ const CustomShape = styled.div(
   })
 )
 
-function Shape({ fill, ...props }) {
-  return <CustomShape fill={fill} {...props}></CustomShape>
+function Shape({ ...props }) {
+  return <CustomShape {...props}></CustomShape>
 }
 
 export default Shape
-Shape.propTypes = {
-  fill: PropTypes.bool.isRequired,
-  right: PropTypes.bool,
-  left: PropTypes.bool,
-  top: PropTypes.bool,
-  bottom: PropTypes.bool,
-  rotate: PropTypes.bool,
-}

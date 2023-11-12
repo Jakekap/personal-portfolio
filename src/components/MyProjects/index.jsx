@@ -11,13 +11,36 @@ import { MdArrowForwardIos } from 'react-icons/md'
 import Shape from '../Shape'
 import SvgItem from '../SvgItem'
 import { useEffect, useState } from 'react'
+import { projectsData } from '../../constants/projectsData'
+import { useNavigate } from 'react-router-dom'
 
-const Img = styled('img')({
-  marginBottom: '20px',
-  width: '100%',
-  height: '100%',
-  objectFit: 'cover',
-})
+const Img = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`
+
+const CustomFigure = styled.figure`
+  margin-bottom: 20px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, #173144);
+    opacity: 0;
+    transition: all 0.2s ease-out;
+  }
+  &:hover:before {
+    opacity: 1;
+  }
+`
 
 const CustomSplideSlide = {
   display: 'flex',
@@ -43,8 +66,11 @@ const CustomArrow = styled.img`
 `
 
 function MyProjects() {
+  const navigate = useNavigate()
+  const handleClick = (id) => {
+    navigate('/projects/' + id)
+  }
   const [page, setPage] = useState(2)
-
   useEffect(() => {
     if (window.innerWidth < 1200) {
       setPage(1)
@@ -92,36 +118,23 @@ function MyProjects() {
           }}
         >
           <SplideTrack>
-            <SplideSlide style={CustomSplideSlide}>
-              <Img src='/images/gato1.png' alt='gato1' />
-              <Typography size='2rem' weight={400}>
-                12/10/18 - WEATHER APP
-              </Typography>
-            </SplideSlide>
-            <SplideSlide style={CustomSplideSlide}>
-              <Img src='/images/gato2.png' alt='gato2' />
-              <Typography size='2rem' weight={400}>
-                12/10/18 - WEATHER APP
-              </Typography>
-            </SplideSlide>
-            <SplideSlide style={CustomSplideSlide}>
-              <Img src='/images/gato3.jpg' alt='gato3' />
-              <Typography size='2rem' weight={400}>
-                12/10/18 - WEATHER APP
-              </Typography>
-            </SplideSlide>
-            <SplideSlide style={CustomSplideSlide}>
-              <Img src='/images/gato4.jpg' alt='gato4' />
-              <Typography size='2rem' weight={400}>
-                12/10/18 - WEATHER APP
-              </Typography>
-            </SplideSlide>
-            <SplideSlide style={CustomSplideSlide}>
-              <Img src='/images/gato5.jpg' alt='gato5' />
-              <Typography size='2rem' weight={400}>
-                12/10/18 - WEATHER APP
-              </Typography>
-            </SplideSlide>
+            {projectsData.map((project) => (
+              <SplideSlide
+                onClick={() => handleClick(project.id)}
+                key={project.id}
+                style={CustomSplideSlide}
+              >
+                <CustomFigure>
+                  <Img
+                    src={project.mainImage.src}
+                    alt={project.mainImage.alt}
+                  />
+                </CustomFigure>
+                <Typography size='2rem' weight={400}>
+                  {`${project.date} - ${project.displayTitle}`}
+                </Typography>
+              </SplideSlide>
+            ))}
           </SplideTrack>
           <div className='splide__arrows'>
             <button className='splide__arrow custom__arrow splide__arrow--prev'>

@@ -1,17 +1,15 @@
 import Typography from '../Typography'
 import Divider from '../Divider'
+import PropTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { css } from '@emotion/react'
 import { BsGithub } from 'react-icons/bs'
 import { LuExternalLink } from 'react-icons/lu'
-import { IoLogoJavascript } from 'react-icons/io5'
-import { SiSass } from 'react-icons/si'
-import { FaReact } from 'react-icons/fa'
-import { ImHtmlFive } from 'react-icons/im'
 import { IconContext } from 'react-icons'
-import { weatherImages } from '../../constants'
 import Masonry from '../Masonry'
 import Clip from '../Clip'
+import newPage from '../../utils/newPage'
+import { iconsDictionary } from '../../utils/iconsDictionary'
 
 const DataGrid = styled.div`
   width: 50%;
@@ -40,12 +38,22 @@ const description = css`
     width: 100%;
   }
 `
+const IconButton = styled.button`
+  background: transparent;
+  border: none;
+  cursor: pointer;
+`
 
-export default function ProjectsInfo() {
+export default function ProjectsInfo({ project }) {
+  const projectImages = project?.images?.map((image) => image.src)
+  console.log(projectImages)
+  const handleClick = (url) => {
+    newPage(url)
+  }
   return (
     <IconContext.Provider value={{ size: '35px' }}>
       <Typography header size='4rem' weight={700} margin='0 0 0 3rem'>
-        WEATHER APP
+        {project.displayTitle}
       </Typography>
       <Divider />
       <InfoContainer>
@@ -71,8 +79,12 @@ export default function ProjectsInfo() {
               gap: '30px',
             }}
           >
-            <BsGithub />
-            <LuExternalLink />
+            <IconButton onClick={() => handleClick(project.repo)}>
+              <BsGithub />
+            </IconButton>
+            <IconButton onClick={() => handleClick(project.demo)}>
+              <LuExternalLink />
+            </IconButton>
           </div>
           <div style={{ gridArea: '2 / 1 / 3 / 2' }}>
             <Typography
@@ -91,7 +103,7 @@ export default function ProjectsInfo() {
               color='#979797'
               weight={400}
             >
-              Utility
+              {project.category}
             </Typography>
           </div>
           <div style={{ gridArea: '3 / 1 / 4 / 2' }}>
@@ -111,7 +123,7 @@ export default function ProjectsInfo() {
               color='#979797'
               weight={400}
             >
-              2023
+              {project.year}
             </Typography>
           </div>
           <div style={{ gridArea: '4 / 1 / 5 / 2' }}>
@@ -133,19 +145,23 @@ export default function ProjectsInfo() {
               flexWrap: 'wrap',
             }}
           >
-            <Clip icon={<IoLogoJavascript />} name='JavaScript' />
-            <Clip icon={<SiSass />} name='Sass' />
-            <Clip icon={<FaReact />} name='React' />
-            <Clip icon={<ImHtmlFive />} name='HTML' />
+            {project?.technologies?.map((technology, index) => (
+              <Clip
+                icon={iconsDictionary[technology]}
+                key={index}
+                name={technology}
+              />
+            ))}
           </div>
         </DataGrid>
         <Typography css={description} size='2rem' weight={400}>
-          Explora el mundo con nuestra app de pronóstico global en
-          tiempo real. Descubre al instante las condiciones
-          meteorológicas actuales en múltiples países.
+          {project.description}
         </Typography>
       </InfoContainer>
-      <Masonry images={weatherImages} />
+      <Masonry images={projectImages} />
     </IconContext.Provider>
   )
+}
+ProjectsInfo.propTypes = {
+  project: PropTypes.object,
 }

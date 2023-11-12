@@ -1,6 +1,7 @@
 import styled from '@emotion/styled'
 import Shape from '../Shape'
 import SvgItem from '../SvgItem'
+import PropTypes from 'prop-types'
 
 const HeaderContainer = styled.section`
   margin-bottom: 6rem;
@@ -9,8 +10,8 @@ const HeaderContainer = styled.section`
 `
 const HeaderCard = styled.div`
   position: relative;
-  background-color: red;
   width: 70%;
+  height: 600px;
   border-radius: 0 0 20px 20px;
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -18,6 +19,8 @@ const HeaderCard = styled.div`
 const CardImage = styled.img`
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  object-position: top;
 `
 const ShapeContainer = styled.div`
   position: relative;
@@ -26,7 +29,7 @@ const ShapeContainer = styled.div`
   width: 100%;
 `
 
-export default function ProjectsHeader() {
+export default function ProjectsHeader({ project }) {
   return (
     <HeaderContainer>
       <ShapeContainer>
@@ -37,9 +40,12 @@ export default function ProjectsHeader() {
           <SvgItem src='/svg/shapes/shape2.svg' alt='shape2' />
         </Shape>
         <HeaderCard>
-          <CardImage src='/images/gato1.png' alt='Projects' />
+          <CardImage src={project?.mainImage?.src} alt='Projects' />
         </HeaderCard>
       </ShapeContainer>
     </HeaderContainer>
   )
+}
+ProjectsHeader.propTypes = {
+  project: PropTypes.object,
 }

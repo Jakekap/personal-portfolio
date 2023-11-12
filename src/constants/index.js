@@ -16,17 +16,6 @@ export const footerIcons = [
   },
 ]
 
-export const weatherImages = [
-  '/images/weather/weather1.jpg',
-  '/images/weather/weather2.jpg',
-  '/images/weather/weather3.jpg',
-  '/images/weather/weather4.jpg',
-  '/images/weather/weather5.jpg',
-  '/images/weather/weather6.jpg',
-  '/images/weather/weather7.jpg',
-  '/images/weather/weather8.jpg',
-]
-
 export const cvUrl =
   'https://drive.google.com/u/0/uc?id=1IFUnwzpjmUN3W5HpwDi2sWW12ohKwlRp&export=download'
 
