@@ -4,6 +4,7 @@ import { css } from '@emotion/react'
 import Typography from '../Typography'
 import { useNavigate, Link } from 'react-router-dom'
 import { theme } from '../../constants/theme'
+import DropdownMenu from '../DropdownMenu'
 
 const NavContainer = styled.div`
   display: flex;
@@ -62,20 +63,17 @@ function Header() {
             </Typography>
           </TitleContainer>
           <Navbar>
-            <Link css={linkStyle} to='/projects'>
-              My projects
-            </Link>
             <Link css={linkStyle} to='/'>
-              Experience
+              Home
             </Link>
-            <Link css={linkStyle} to='#'>
+            <Link css={linkStyle} to='/projects'>
+              Web projects
+            </Link>
+            <DropdownMenu />
+            <Link css={linkStyle} to='/aboutme'>
               About me
             </Link>
-            <Link css={linkStyle} to='#'>
-              Contact
-            </Link>
           </Navbar>
-          {/* <CgMenu /> */}
         </NavContainer>
       </IconContext.Provider>
     </header>

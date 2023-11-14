@@ -2,8 +2,9 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Layout from './views/Layout'
-import Projects from './views/Projects'
+import Project from './views/Project'
 import Landing from './views/Landing'
+import AllProjects from './views/AllProjects'
 
 const router = createBrowserRouter([
   {
@@ -15,10 +16,18 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: '/projects/:id',
+    path: '/project/:id',
     element: (
       <Layout>
-        <Projects />
+        <Project />
+      </Layout>
+    ),
+  },
+  {
+    path: '/projects',
+    element: (
+      <Layout>
+        <AllProjects />
       </Layout>
     ),
   },

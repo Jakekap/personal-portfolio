@@ -13,7 +13,7 @@ const CustomParagraph = styled.p((props) => ({
   WebkitTextStroke: props.borders ? '1px #cccccc' : 'none',
   margin: props.margin || 0,
   lineHeight: props.main || props.header ? '88%' : '',
-  letterSpacing: props.main ? '-0.07em' : '',
+  letterSpacing: props.main ? '-0.1em' : '',
   textAlign: props.align,
   width: props.width,
   '@media (max-width: 1200px)': {

@@ -47,8 +47,9 @@ const CustomSplideSlide = {
   flexDirection: 'column',
 }
 
-const SeeAllProjects = styled.div`
+const SeeAllProjects = styled.button`
   display: inline-flex;
+  align-items: center;
   gap: 1rem;
   img {
     transition: transform 0.1s ease-in-out;
@@ -67,8 +68,11 @@ const CustomArrow = styled.img`
 
 function MyProjects() {
   const navigate = useNavigate()
+  const handleAllProjects = () => {
+    navigate('/projects')
+  }
   const handleClick = (id) => {
-    navigate('/projects/' + id)
+    navigate('/project/' + id)
   }
   const [page, setPage] = useState(2)
   useEffect(() => {
@@ -146,7 +150,7 @@ function MyProjects() {
           </div>
         </Splide>
       </div>
-      <SeeAllProjects>
+      <SeeAllProjects onClick={handleAllProjects}>
         <Typography size='2rem' weight={700} underline pointer inline>
           SEE ALL PROJECTS
         </Typography>

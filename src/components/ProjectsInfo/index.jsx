@@ -46,7 +46,6 @@ const IconButton = styled.button`
 
 export default function ProjectsInfo({ project }) {
   const projectImages = project?.images?.map((image) => image.src)
-  console.log(projectImages)
   const handleClick = (url) => {
     newPage(url)
   }

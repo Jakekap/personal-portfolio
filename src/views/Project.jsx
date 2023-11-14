@@ -1,10 +1,9 @@
 import ProjectsHeader from '../components/ProjectsHeader'
 import ProjectsInfo from '../components/ProjectsInfo'
-import { useParams } from 'react-router-dom'
+import { useParams, ScrollRestoration } from 'react-router-dom'
 import { projectsData } from '../constants/projectsData'
 import { useEffect, useState } from 'react'
-
-export default function Projects() {
+export default function Project() {
   const { id } = useParams()
   const [project, setProject] = useState({})
   useEffect(() => {
@@ -14,6 +13,7 @@ export default function Projects() {
 
   return (
     <>
+      <ScrollRestoration />
       <ProjectsHeader project={project} />
       <ProjectsInfo project={project} />
     </>
