@@ -102,9 +102,9 @@ export const illustrationsData = [
     title: 'COMMISSIONS',
     year: '2019',
     images: [
-      '/images/illustrations/illustration_001.png',
-      '/images/illustrations/illustration_002.png',
       '/images/illustrations/illustration_003.png',
+      '/images/illustrations/illustration_001.jpg',
+      '/images/illustrations/illustration_002.png',
       '/images/illustrations/illustration_004.png',
       '/images/illustrations/illustration_005.png',
       '/images/illustrations/illustration_006.png',

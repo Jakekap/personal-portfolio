@@ -19,7 +19,7 @@ export default function Animations() {
   return (
     <div>
       <ScrollRestoration />
-      <SectionTitle customPadding='5rem 0' title='3D MODELS' />
+      <SectionTitle customPadding='5rem 0' title='ANIMATIONS' />
       <ContentContainer>
         {animationsData?.map((animation) => {
           return (
