@@ -3,13 +3,13 @@ import SvgItem from '../SvgItem'
 import Typography from '../Typography'
 import PropTypes from 'prop-types'
 
-export default function SectionTitle({ title }) {
+export default function SectionTitle({ title, customPadding }) {
   return (
     <div style={{ position: 'relative' }}>
       <Shape left='-15px'>
         <SvgItem src='/svg/shapes/shape10.svg' alt='shape6' />
       </Shape>
-      <div style={{ padding: '3rem 0' }}>
+      <div style={{ padding: customPadding || '3rem 0' }}>
         <Typography
           size='6rem'
           weight={700}
@@ -24,4 +24,5 @@ export default function SectionTitle({ title }) {
 }
 SectionTitle.propTypes = {
   title: PropTypes.element.isRequired,
+  customPadding: PropTypes.string,
 }

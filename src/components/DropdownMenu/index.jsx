@@ -31,11 +31,11 @@ const Button = styled.button`
 const linkStyle = css`
   display: inline-block;
   width: 100%;
-  padding: 10px 15px;
+  padding: 10px 10px;
   list-style-type: none;
   color: ${theme.color.primary};
   text-decoration: none;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   cursor: pointer;
   :hover {
     background: linear-gradient(
@@ -58,7 +58,7 @@ export default function DropdownMenu() {
         <Link css={linkStyle} to='/3dmodels'>
           3D Models
         </Link>
-        <Link css={linkStyle} to='pixelart'>
+        <Link css={linkStyle} to='/pixelart'>
           Pixel art
         </Link>
         <Link css={linkStyle} to='/illustrations'>

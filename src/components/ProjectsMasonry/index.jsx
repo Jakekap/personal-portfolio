@@ -2,6 +2,7 @@ import styled from '@emotion/styled'
 import PropTypes from 'prop-types'
 import Typography from '../Typography'
 import { iconsDictionary } from '../../utils/iconsDictionary'
+import { useNavigate } from 'react-router-dom'
 import Clip from '../Clip'
 
 const ProjectsMasonryContainer = styled.div`
@@ -19,7 +20,7 @@ const CardContent = styled.div`
   left: 0;
   padding: 1rem;
   margin: 1rem;
-  display: none;
+  opacity: 0;
   flex-direction: column;
   justify-content: flex-end;
   transition: all 0.2s ease-out;
@@ -29,6 +30,7 @@ const ProjectsMasonryCard = styled.div`
   height: 500px;
   position: relative;
   margin-bottom: 2rem;
+  cursor: pointer;
   &:before {
     content: '';
     position: absolute;
@@ -45,7 +47,7 @@ const ProjectsMasonryCard = styled.div`
     opacity: 1;
   }
   &:hover ${CardContent} {
-    display: flex;
+    opacity: 1;
     transition: all 0.2s ease-out;
   }
 `
@@ -57,10 +59,17 @@ const CardImage = styled.img`
 `
 
 export default function ProjectsMasonry({ margin, projects }) {
+  const navigate = useNavigate()
+  const handleProject = (project) => {
+    navigate(`/project/${project.id}`)
+  }
   return (
     <ProjectsMasonryContainer margin={margin}>
       {projects?.map((project, index) => (
-        <ProjectsMasonryCard key={index}>
+        <ProjectsMasonryCard
+          onClick={() => handleProject(project)}
+          key={index}
+        >
           <CardContent>
             <Typography
               header
