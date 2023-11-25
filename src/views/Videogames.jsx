@@ -61,7 +61,7 @@ export default function Videogames() {
             title='YouTube video player'
             style={{ border: 'none' }}
             allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-            allowfullscreen
+            allowFullScreen
           ></iframe>
         </VideoPlayer>
         <Splide

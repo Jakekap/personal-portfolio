@@ -66,7 +66,6 @@ export const pixelartData = [
         '/images/pixelart/bilbo/bilboImages_001.gif',
         '/images/pixelart/bilbo/bilboImages_002.png',
         '/images/pixelart/bilbo/bilboImages_003.png',
-        '/images/pixelart/bilbo/bilboImages_004.png',
       ],
       props: [
         '/images/pixelart/bilbo/props_001.gif',
@@ -92,7 +91,8 @@ export const animationsData = [
     id: 1,
     title: 'ÚLTIMA CENA',
     year: '2019',
-    trailerUrl: 'https://www.youtube.com/watch?v=qKh645vAJjo',
+    trailerUrl:
+      'https://www.youtube.com/embed/qKh645vAJjo?si=Nc5CHb_bimtQ8zg4',
   },
 ]
 
