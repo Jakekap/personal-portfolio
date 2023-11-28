@@ -70,7 +70,7 @@ function Header() {
               Web projects
             </Link>
             <DropdownMenu />
-            <Link css={linkStyle} to='/aboutme'>
+            <Link css={linkStyle} to='/about-me'>
               About me
             </Link>
           </Navbar>

@@ -10,6 +10,7 @@ import ThreeDModels from './views/ThreeDModels'
 import Pixelart from './views/Pixelart'
 import Illustrations from './views/Illustrations'
 import Animations from './views/Animations'
+import AboutMe from './views/AboutMe'
 
 const router = createBrowserRouter([
   {
@@ -73,6 +74,14 @@ const router = createBrowserRouter([
     element: (
       <Layout>
         <Animations />
+      </Layout>
+    ),
+  },
+  {
+    path: '/about-me',
+    element: (
+      <Layout>
+        <AboutMe />
       </Layout>
     ),
   },
