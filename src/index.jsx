@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createHashRouter, RouterProvider } from 'react-router-dom'
 import Layout from './views/Layout'
 import Project from './views/Project'
 import Landing from './views/Landing'
@@ -12,7 +12,7 @@ import Illustrations from './views/Illustrations'
 import Animations from './views/Animations'
 import AboutMe from './views/AboutMe'
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: '/',
     element: (
