@@ -2,5 +2,5 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home3/jakekapc/public_html/
-    - rm -rf $DEPLOYPATH
+    - rm -rf $DEPLOYPATH/*
     - /bin/cp -r build/* $DEPLOYPATH
