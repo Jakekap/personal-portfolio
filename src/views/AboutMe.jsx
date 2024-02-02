@@ -195,13 +195,13 @@ export default function AboutMe() {
           <SkillContainer>
             {aboutMeData.education.courses.map((courses, index) => (
               <Skill column key={index}>
-                <Typography align='center' size='1.6rem' weight={600}>
+                <Typography size='1.6rem' weight={600}>
                   {courses.institution}
                 </Typography>
-                <Typography align='center' size='1.6rem' weight={400}>
+                <Typography size='1.6rem' weight={400}>
                   {courses.title}
                 </Typography>
-                <Typography align='center' size='1.6rem' weight={400}>
+                <Typography size='1.6rem' weight={400}>
                   {courses.date}
                 </Typography>
               </Skill>
