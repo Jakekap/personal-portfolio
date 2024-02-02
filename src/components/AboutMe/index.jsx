@@ -17,6 +17,7 @@ const aboutSection = css`
   flex-direction: column;
   align-items: flex-start;
   gap: 100px;
+  width: 50%;
   margin: 0 0 3rem 3rem;
   @media only screen and (max-width: 1200px) {
     flex-direction: column;
@@ -53,7 +54,13 @@ function AboutMe() {
         <SvgItem src='/svg/shapes/shape6.svg' alt='shape6' />
       </Shape>
       <div css={aboutSection}>
-        <Typography header weight={700} size='4rem' color='#464446'>
+        <Typography
+          alignSelf='flex-start'
+          header
+          weight={700}
+          size='4rem'
+          color='#464446'
+        >
           ABOUT
           <br />
           ME

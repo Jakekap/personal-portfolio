@@ -1,5 +1,5 @@
 import { ScrollRestoration } from 'react-router-dom'
-import SectionTitle from '../components/SectionTitle.jsx'
+import SectionTitle from '../components/SectionTitle'
 import Typography from '../components/Typography/index.jsx'
 import Divider from '../components/Divider/index.jsx'
 import { videogamesData } from '../constants/artDesignData.js'
@@ -42,7 +42,11 @@ export default function Videogames() {
   return (
     <div>
       <ScrollRestoration />
-      <SectionTitle customPadding='5rem 0' title='VIDEOGAMES' />
+      <SectionTitle
+        wordBreak
+        customPadding='5rem 0'
+        title='VIDEOGAMES'
+      />
       <Typography
         header
         size='4rem'

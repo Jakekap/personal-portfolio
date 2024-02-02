@@ -1,4 +1,4 @@
-import SectionTitle from '../components/SectionTitle.jsx'
+import SectionTitle from '../components/SectionTitle'
 import { projectsData } from '../constants/projectsData.js'
 import ProjectsMasonry from '../components/ProjectsMasonry/index.jsx'
 import { ScrollRestoration } from 'react-router-dom'

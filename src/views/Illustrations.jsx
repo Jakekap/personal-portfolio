@@ -1,5 +1,5 @@
 import { ScrollRestoration } from 'react-router-dom'
-import SectionTitle from '../components/SectionTitle.jsx'
+import SectionTitle from '../components/SectionTitle'
 import Typography from '../components/Typography/index.jsx'
 import Divider from '../components/Divider/index.jsx'
 import { illustrationsData } from '../constants/artDesignData.js'
@@ -37,7 +37,11 @@ export default function Illustrations() {
   return (
     <div>
       <ScrollRestoration />
-      <SectionTitle customPadding='5rem 0' title='ILLUSTRATIONS' />
+      <SectionTitle
+        wordBreak
+        customPadding='5rem 0'
+        title='ILLUSTRATIONS'
+      />
       <ContentContainer>
         {illustrationsData?.map((illustration) => {
           return (

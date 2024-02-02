@@ -1,5 +1,5 @@
 import { ScrollRestoration } from 'react-router-dom'
-import SectionTitle from '../components/SectionTitle.jsx'
+import SectionTitle from '../components/SectionTitle'
 import Typography from '../components/Typography/index.jsx'
 import Divider from '../components/Divider/index.jsx'
 import { threeDModelsData } from '../constants/artDesignData.js'

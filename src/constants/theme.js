@@ -39,6 +39,13 @@ export const globalStyles = css`
     font-weight: 700;
     font-display: swap;
   }
+  @font-face {
+    font-family: 'ArchivoBlack';
+    src: url('/fonts/archivo-black/ArchivoBlack-Regular.woff2')
+      format('woff2');
+    font-weight: 400;
+    font-display: swap;
+  }
   * {
     margin: 0;
     padding: 0;
