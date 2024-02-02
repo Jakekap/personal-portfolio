@@ -17,7 +17,7 @@ export const footerIcons = [
 ]
 
 export const cvUrl =
-  'https://drive.google.com/u/0/uc?id=1IFUnwzpjmUN3W5HpwDi2sWW12ohKwlRp&export=download'
+  'https://drive.google.com/file/d/1IFUnwzpjmUN3W5HpwDi2sWW12ohKwlRp/view?usp=sharing'
 
 export const experienceData = [
   {
