@@ -7,10 +7,10 @@ import Carousel from '../Carousel'
 function MySkills() {
   return (
     <section style={{ position: 'relative' }}>
-      <Shape left>
+      <Shape left='0'>
         <SvgItem src='/svg/shapes/shape4.svg' alt='shape4' />
       </Shape>
-      <Shape right bottom='0'>
+      <Shape right='0' bottom='0'>
         <SvgItem src='/svg/shapes/shape5.svg' alt='shape5' />
       </Shape>
       <Typography

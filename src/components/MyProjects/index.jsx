@@ -86,10 +86,10 @@ function MyProjects() {
   return (
     <section style={{ marginBottom: '10rem' }}>
       <div style={{ marginBottom: '3rem', position: 'relative' }}>
-        <Shape right>
+        <Shape right='0'>
           <SvgItem src='/svg/shapes/shape1.svg' alt='shape1' />
         </Shape>
-        <Shape left bottom='0'>
+        <Shape left='0' bottom='0'>
           <SvgItem src='/svg/shapes/shape2.svg' alt='shape2' />
         </Shape>
         <div

@@ -50,7 +50,7 @@ const spanStyle = css`
 function AboutMe() {
   return (
     <div css={aboutContainer}>
-      <Shape width='100%' right top='5rem'>
+      <Shape width='100%' right='0' top='5rem'>
         <SvgItem src='/svg/shapes/shape6.svg' alt='shape6' />
       </Shape>
       <div css={aboutSection}>

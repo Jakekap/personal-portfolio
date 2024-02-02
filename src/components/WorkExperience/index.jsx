@@ -23,7 +23,7 @@ const expContainer = css`
 function WorkExperience() {
   return (
     <section css={workExperienceStyle}>
-      <Shape left>
+      <Shape left='0'>
         <SvgItem src='/svg/shapes/shape3.svg' alt='shape3' />
       </Shape>
       <Typography

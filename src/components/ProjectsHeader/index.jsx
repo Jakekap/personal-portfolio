@@ -33,10 +33,10 @@ export default function ProjectsHeader({ project }) {
   return (
     <HeaderContainer>
       <ShapeContainer>
-        <Shape right>
+        <Shape right='0'>
           <SvgItem src='/svg/shapes/shape1.svg' alt='shape1' />
         </Shape>
-        <Shape left bottom='-100px'>
+        <Shape left='0' bottom='-100px'>
           <SvgItem src='/svg/shapes/shape2.svg' alt='shape2' />
         </Shape>
         <HeaderCard>

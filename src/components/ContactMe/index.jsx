@@ -134,13 +134,13 @@ const logoIcons = css`
 function ContactMe() {
   return (
     <section css={contactMeContainer}>
-      <Shape left top='-80px'>
+      <Shape left='0' top='-80px'>
         <SvgItem src='/svg/shapes/shape7.svg' alt='shape7' />
       </Shape>
-      <Shape left bottom='5rem'>
+      <Shape left='0' bottom='5rem'>
         <SvgItem src='/svg/shapes/shape8.svg' alt='shape8' />
       </Shape>
-      <Shape right bottom='0'>
+      <Shape right='0' bottom='0'>
         <SvgItem src='/svg/shapes/shape9.svg' alt='shape9' />
       </Shape>
       <Typography
