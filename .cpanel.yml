@@ -2,6 +2,5 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home3/jakekapc/public_html/
-    - npm install
-    - npm run build
+    - rm -rf $DEPLOYPATH
     - /bin/cp -r build/* $DEPLOYPATH
