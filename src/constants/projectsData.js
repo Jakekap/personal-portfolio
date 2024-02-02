@@ -1,5 +1,45 @@
 export const projectsData = [
   {
+    id: 'dailyCare',
+    title: 'DailyCare',
+    displayTitle: 'DAILY CARE',
+    repo: 'https://github.com/Jakekap/dailycare-project-frontend-6',
+    demo: 'https://daily-care-504df.web.app/sign-in',
+    category: 'Service',
+    year: '2024',
+    date: '26/01/2024',
+    description:
+      'DailyCare is a web application aimed at enhancing the mental health of companies in the IT sector, as well as combating issues such as anxiety and burnout in order to improve the mental well-being of employees and their productivity.',
+    technologies: [
+      'JavaScript',
+      'Sass',
+      'React',
+      'Redux',
+      'Firebase',
+      'HTML',
+      'Tailwind',
+      'Ant Design',
+    ],
+    mainImage: {
+      src: '/images/dailyCare/mockupDailyCare.png',
+      alt: 'DailyCare',
+    },
+    images: [
+      {
+        src: '/images/dailyCare/welcome.png',
+        alt: 'Welcome',
+      },
+      {
+        src: '/images/dailyCare/login.png',
+        alt: 'Login',
+      },
+      {
+        src: '/images/dailyCare/explore.png',
+        alt: 'Explore',
+      },
+    ],
+  },
+  {
     id: 'flightApp',
     title: 'Flight App',
     displayTitle: 'FLIGHT APP',
