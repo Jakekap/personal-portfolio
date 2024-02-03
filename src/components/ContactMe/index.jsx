@@ -161,12 +161,12 @@ function ContactMe() {
           css={formStyle}
         >
           <label css={labelStyle}>
-            Name
+            Subject
             <input
-              placeholder='John Doe'
+              placeholder='Job offer'
               css={textFieldStyle}
-              type='email'
-              name='email'
+              type='text'
+              name='_subject'
               required
             />
           </label>
@@ -175,8 +175,8 @@ function ContactMe() {
             <input
               placeholder='youremail@exaple.com'
               css={textFieldStyle}
-              type='text'
-              name='_subject'
+              type='email'
+              name='email'
               required
             />
           </label>
