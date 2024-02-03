@@ -15,6 +15,12 @@ const HeaderCard = styled.div`
   border-radius: 0 0 20px 20px;
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  @media (max-width: 1200px) {
+    height: 300px;
+  }
+  @media (max-width: 600px) {
+    height: 200px;
+  }
 `
 const CardImage = styled.img`
   width: 100%;
